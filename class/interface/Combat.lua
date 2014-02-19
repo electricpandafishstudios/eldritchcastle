@@ -89,6 +89,7 @@ function _M:attackTargetWith(target, damage_type, weapon_damage, super_modifier,
 	local wpn = weapon_damage * self:getCon()
 	local dam = (self.combat.dam + self:getCon()) + (wpn + super_modifier + sub_modifier)
 	DamageType:get(damage_type).projector(self, target.x, target.y, damage_type, dam, hit_type)
+	self:onHit(damage_type, dam, target)
 end
 
 function _M:getSuperModifier(weapon, target)
@@ -117,4 +118,18 @@ function _M:getSubModifier(weapon, target)
 			return -damage
 		end
 	end
+end
+
+function _M:onHit(damtype, dam, target)
+	if damtype == DamageType.ELDRITCH then
+			target:setEffect(game.player.EFF_MADNESS, 1, {power = ((dam / 1) * 0.25)})
+		end
+		
+		if damtype == DamageType.SANGUINE then
+			self:heal(0.50 * dam, self)
+		end
+		
+		if damtype == DamageType.INFECTED then
+			target:setEffect(game.player.EFF_POISON, 5, {power = (dam * 0.25)})
+		end
 end
