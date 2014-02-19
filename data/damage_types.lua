@@ -24,18 +24,28 @@ local function doDamageFlyers(src, x, y, type, dam, hit_type)
 	
 	local target = game.level.map(x, y, Map.ACTOR)
 	if target then
-		--[[if src = game.player then
-			if hit_type = "crit" then
+		if src == game.player then
+			if hit_type == "crit" then
 				-- Display the target's crit message
-			elseif hit_type = "super crit" then
+			elseif hit_type == "super crit" then
 				-- Display the target's super crit message
-			elseif hit_type = "weak" then
+			elseif hit_type == "weak" then
 				-- Display the target's weak message
 			else
-		
+				game.logSeen(target, flash, "Your attack %s %s", target.messages.default, target.name)
 			end
-		end]]
-		game.logSeen(target, flash, "%s hits %s for %s%0.2f %s damage#LAST#.", src.name:capitalize(), target.name, DamageType:get(type).text_color or "#aaaaaa#", dam, DamageType:get(type).name)
+		elseif target == game.player then
+			if hit_type == "crit" then
+				-- Display the target's crit message
+			elseif hit_type == "super crit" then
+				-- Display the target's super crit message
+			elseif hit_type == "weak" then
+				-- Display the target's weak message
+			else
+				game.logSeen(target, flash, "%s's attack %s you", src.name:capitalize(), target.messages.default)
+			end
+		end
+		
 		if target:takeHit(dam, src) then
 			if src == game.player or target == game.player then
 				game.flyers:add(sx, sy, 30, (rng.range(0,2)-1) * 0.5, -3, "Kill!", {255,0,255})

@@ -79,6 +79,8 @@ function _M:init(t, no_default)
 
 	-- Default melee barehanded damage
 	self.combat = { dam=1, damtype = DamageType.PHYSICAL}
+	
+	self.messages = { default = "harms"}
 
 	engine.Actor.init(self, t, no_default)
 	engine.interface.ActorTemporaryEffects.init(self, t)
