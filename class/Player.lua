@@ -174,25 +174,35 @@ function _M:doDrop(inven, item, on_done, nb)
 end
 
 function _M:doWear(inven, item, o)
-    self:removeObject(inven, item, true)
-    local ro = self:wearObject(o, true, true)
-    if ro then
-        if type(ro) == "table" then self:addObject(inven, ro) end
-    elseif not ro then
-        self:addObject(inven, o)
-    end
-    self:sortInven()
-	self:useActionPoints(3)
-    self.changed = true
+	if self:getActions() >= 3 then
+		self:removeObject(inven, item, true)
+		local ro = self:wearObject(o, true, true)
+		if ro then
+			if type(ro) == "table" then self:addObject(inven, ro) end
+		elseif not ro then
+			self:addObject(inven, o)
+		end
+		self:sortInven()
+		self:useActionPoints(3)
+		self.changed = true
+	else
+		game.flash(game.flash.BAD, "I don't have enough Action Points to do that. (5 Required)")
+		game.log("Low Action Points!")
+	end
 end
 
 function _M:doTakeoff(inven, item, o)
-    if self:takeoffObject(inven, item) then
-        self:addObject(self.INVEN_INVEN, o)
-    end
-	self:sortInven()
-	self:useActionPoints(3)
-    self.changed = true
+	if self:getActions() >= 3 then
+		if self:takeoffObject(inven, item) then
+			self:addObject(self.INVEN_INVEN, o)
+		end
+		self:sortInven()
+		self:useActionPoints(3)
+		self.changed = true
+	else
+		game.flash(game.flash.BAD, "I don't have enough Action Points to do that. (5 Required)")
+		game.log("Low Action Points!")
+	end
 end
 
 -- Precompute FOV form, for speed

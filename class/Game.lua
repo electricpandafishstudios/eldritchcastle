@@ -328,11 +328,17 @@ function _M:setupCommands()
 		end,
 		
 		DROP_FLOOR = function()
-			if self.	player.no_inventory_access then return end
+			if self.player.no_inventory_access then return end
 			self.player:playerDrop()
 		end,
 		
 		SHOW_INVENTORY = function()
+			if self.player:getActions() < 2 then
+				self.flash(game.flash.BAD, "I don't have enough Action Points to do that. (5 Required)")
+				self.log("Low Action Points!")
+				return
+			end
+			self.player:useActionPoints(2)
 			if self.player.no_inventory_access then return end
 			local d
 			d = self.player:showEquipInven("Inventory", nil, function(o, inven, item, button, event)
