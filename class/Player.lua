@@ -132,10 +132,10 @@ function _M:playerPickup()
             d:used()
         end)
     else
-		if self:getActions() >= 5 then
+		if self:getActions() >= 2 then
 		       self:pickupFloor(1, true)
 				self:sortInven()
-				self:useActionPoints(5)
+				self:useActionPoints(2)
 				self.changed = true
 		else
 			game.flash(game.flash.BAD, "I don't have enough Action Points to do that. (5 Required)")
@@ -147,10 +147,10 @@ end
 function _M:playerDrop()
     local inven = self:getInven(self.INVEN_INVEN)
     local d d = self:showInventory("Drop object", inven, nil, function(o, item)
-        if self:getActions() >= 5 then
+        if self:getActions() >= 2 then
 		self:dropFloor(inven, item, true, true)
         self:sortInven(inven)
-		self:useActionPoints(5)
+		self:useActionPoints(2)
         self.changed = true
         return true
 		else
@@ -168,7 +168,7 @@ function _M:doDrop(inven, item, on_done, nb)
         for i = 1, nb do self:dropFloor(inven, item, true) end
     end
     self:sortInven(inven)
-	self:useActionPoints(0)
+	self:useActionPoints(3)
     self.changed = true
     if on_done then on_done() end
 end
@@ -182,7 +182,7 @@ function _M:doWear(inven, item, o)
         self:addObject(inven, o)
     end
     self:sortInven()
-	self:useActionPoints(5)
+	self:useActionPoints(3)
     self.changed = true
 end
 
@@ -191,7 +191,7 @@ function _M:doTakeoff(inven, item, o)
         self:addObject(self.INVEN_INVEN, o)
     end
 	self:sortInven()
-	self:useActionPoints(5)
+	self:useActionPoints(3)
     self.changed = true
 end
 
