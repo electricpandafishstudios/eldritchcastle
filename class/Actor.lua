@@ -47,6 +47,20 @@ module(..., package.seeall, class.inherit(
 	mod.class.interface.Combat
 ))
 
+function _M:getMessage(message_type, DamageType)
+	if message_type then
+		if message_type == hit_normal then
+		elseif message_type == hit_weak then
+		elseif message_type == hit_crit then
+		elseif message_type == hit_spcrit then
+		elseif message_type == death_normal then
+		elseif message_type == death_weak then
+		elseif message_type == death_crit then
+		elseif message_type == death_spcrit then
+		end
+	else return self.hitMessages.default end
+end
+
 function _M:getWeaponFromSlot(weapon_slot)
 	if not 	weapon_slot or not self:getInven(weapon_slot) then return end
 	local weapon = self:getInven(weapon_slot)[1]
@@ -80,7 +94,14 @@ function _M:init(t, no_default)
 	-- Default melee barehanded damage
 	self.combat = { dam=1, damtype = DamageType.PHYSICAL}
 	
-	self.messages = { default = "harms"}
+	self.hitMessages = {
+		default = "harms",
+		normal = {},
+		weak = {},
+		crit = {},
+		spcrit = {},
+	}
+	self.deathMessages = { default = "was killed"}
 
 	engine.Actor.init(self, t, no_default)
 	engine.interface.ActorTemporaryEffects.init(self, t)

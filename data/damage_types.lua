@@ -32,7 +32,7 @@ local function doDamageFlyers(src, x, y, type, dam, hit_type)
 			elseif hit_type == "weak" then
 				-- Display the target's weak message
 			else
-				game.logSeen(target, flash, "Your attack %s %s", target.messages.default, target.name)
+				game.logSeen(target, flash, "Your attack %s %s", target:getMessage(), target.name)
 			end
 		elseif target == game.player then
 			if hit_type == "crit" then
@@ -42,14 +42,14 @@ local function doDamageFlyers(src, x, y, type, dam, hit_type)
 			elseif hit_type == "weak" then
 				-- Display the target's weak message
 			else
-				game.logSeen(target, flash, "%s's attack %s you", src.name:capitalize(), target.messages.default)
+				game.logSeen(target, flash, "%s's attack %s you", src.name:capitalize(), target:getMessage())
 			end
 		end
 		
 		if target:takeHit(dam, src) then
 			if src == game.player or target == game.player then
 				game.flyers:add(sx, sy, 30, (rng.range(0,2)-1) * 0.5, -3, "Kill!", {255,0,255})
-			end
+			 end
 		else
 			if src == game.player then
 				game.flyers:add(sx, sy, 30, (rng.range(0,2)-1) * 0.5, -3, tostring(-math.ceil(dam)), {0,255,0})
