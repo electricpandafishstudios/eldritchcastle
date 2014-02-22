@@ -47,8 +47,9 @@ module(..., package.seeall, class.inherit(
 	mod.class.interface.Combat
 ))
 
-function _M:getMessage(message_type, DamageType)
+function _M:getMessage(message_type, damage_type)
 	if message_type then
+		if not damage_type then damage_type = DamageType.PHYSICAL end
 		if message_type == hit_normal then
 		elseif message_type == hit_weak then
 		elseif message_type == hit_crit then
@@ -101,7 +102,13 @@ function _M:init(t, no_default)
 		crit = {},
 		spcrit = {},
 	}
-	self.deathMessages = { default = "was killed"}
+	self.deathMessages = {
+		default = "was killed",
+		normal = {},
+		weak = {},
+		crit = {},
+		spcrit = {},
+	}
 
 	engine.Actor.init(self, t, no_default)
 	engine.interface.ActorTemporaryEffects.init(self, t)
