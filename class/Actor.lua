@@ -47,19 +47,24 @@ module(..., package.seeall, class.inherit(
 	mod.class.interface.Combat
 ))
 
-function _M:getMessage(message_type, damage_type)
-	if message_type then
-		if not damage_type then damage_type = DamageType.PHYSICAL end
-		if message_type == hit_normal then
-		elseif message_type == hit_weak then
-		elseif message_type == hit_crit then
-		elseif message_type == hit_spcrit then
-		elseif message_type == death_normal then
-		elseif message_type == death_weak then
-		elseif message_type == death_crit then
-		elseif message_type == death_spcrit then
+function _M:getHitMessage(damage_type)
+		damage_type = damage_type or DamageType.PHYSICAL
+		hit_type = hit_type or "hit_normal"
+		if hit_type == "hit_normal" and self.hitMessages.normal[damage_type] then
+			return self.hitMessages.normal[damage_type]
+		else
+			return self.hitMessages.default
+		end 
+end
+
+function _M:getDeathMessage(damage_type)
+		damage_type = damage_type or DamageType.PHYSICAL
+		death_type = death_type or "death_normal"
+		if death_type == "death_normal" and self.deathMessages.normal[damage_type] then
+			return self.deathMessages.normal[damage_type]
+		else
+			return self.deathMessages.default
 		end
-	else return self.hitMessages.default end
 end
 
 function _M:getWeaponFromSlot(weapon_slot)
@@ -97,14 +102,14 @@ function _M:init(t, no_default)
 	
 	self.hitMessages = {
 		default = "harms",
-		normal = {},
+		normal = {"hits"},
 		weak = {},
 		crit = {},
 		spcrit = {},
 	}
 	self.deathMessages = {
 		default = "was killed",
-		normal = {},
+		normal = {"was slain"},
 		weak = {},
 		crit = {},
 		spcrit = {},

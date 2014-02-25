@@ -120,6 +120,17 @@ function _M:getSubModifier(weapon, target)
 	end
 end
 
+function _M:getDamageType()
+	local weapon = self:getWeaponFromSlot("HAND")
+	local damage_type
+	if weapon then
+		damage_type = weapon.combat.damtype or self.combat.damtype or DamageType.PHYSICAL
+	else
+		damage_type = self.combat.damtype or DamageType.PHYSICAL
+	end
+	return damage_type
+end
+
 function _M:onHit(damtype, dam, target)
 	if damtype == DamageType.ELDRITCH then
 			target:setEffect(game.player.EFF_MADNESS, 1, {power = ((dam / 1) * 0.25)})
