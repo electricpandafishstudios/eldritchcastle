@@ -102,14 +102,14 @@ function _M:init(t, no_default)
 	
 	self.hitMessages = {
 		default = "harms",
-		normal = {"hits"},
+		normal = {"punched", "bashed", "slashed", "stabbed"},
 		weak = {},
 		crit = {},
 		spcrit = {},
 	}
 	self.deathMessages = {
 		default = "was killed",
-		normal = {"was slain"},
+		normal = {"was beaten to death", "was bashed to death", "was cut to death", "was stabbed to death"},
 		weak = {},
 		crit = {},
 		spcrit = {},
