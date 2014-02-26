@@ -16,3 +16,24 @@
 --
 -- Nicolas Casalini "DarkGod"
 -- darkgod@te4.org
+
+return {
+	name = "castle_static",
+	level_range = {1, 5},
+	max_level = 10,
+	decay = {300, 800},
+	width = 100, height = 100,
+	persistent = "static",
+	no_level_connectivity = true,
+	no_worldport = true,
+	generator =  {
+		map = { class = "engine.generator.map.Static" },
+		-- actor = {},
+		-- object = {},
+	},
+	levels = {
+		[1] = {
+			generator = { map = { map = "castle_f2" }, },
+		},
+	},
+}

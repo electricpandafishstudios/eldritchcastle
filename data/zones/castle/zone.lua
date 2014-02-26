@@ -16,31 +16,48 @@
 --
 -- Nicolas Casalini "DarkGod"
 -- darkgod@te4.org
+
 return {
 	name = "Castle",
-	level_range = {1, 1},
-	-- level_scheme = "player",
-	max_level = 3,
-	-- decay = {300, 800},
-	-- actor_adjust_level = function(zone, level, e) return zone.base_level + e:getRankLevelAdjust() end,
-	width = 500, height = 500,
---	all_remembered = true,
-	all_lited = true,
+	level_range = {1, 5},
+	max_level = 10,
+	decay = {300, 800},
+	width = 100, height = 100,
 	persistent = "zone",
-	no_level_connectivity = true,
+	all_lited = true,
+	--min_material_level = 3,
+	--max_material_level = 4,
 	no_worldport = true,
+	no_level_connectivity = true,
 	generator =  {
 		map = {
-			class = "engine.generator.map.Static",
+			class = "engine.generator.map.TileSet",
+			tileset = {"7x7/base", "7x7/rooms"},
+			--start_tiles = {{tile="side_hall", x=50, y=50}},
+			['.'] = "FLOOR",
+			[','] = "CARPET",
+			['#'] = "WALL",
+			--door = "DOOR",
+			up = "UP",
+			down = "DOWN",
 		},
-		actor = {},
-		object = {},
-		trap = {},
+		actor = {
+			class = "engine.generator.actor.Random",
+--			guardian = "SHADE_OF_ANGMAR", -- The guardian is set in the static map
+			nb_npc = {5, 10},
+		},
+		object = {
+			-- class = "engine.generator.object.Random",
+			-- nb_object = {1, 5},
+		},
 	},
-	levels =
-	{
+	levels = {
 		[1] = {
-			generator = { map = { map = "entrance" }, },
-		},
+			generator =  { map = {
+					class = "engine.generator.map.TileSet",
+					tileset = {"7x7/base", "7x7/rooms"},
+					start_tiles = {{tile="side_hall", x=10, y=10}}, 
+					},},
+					},
 	},
 }
