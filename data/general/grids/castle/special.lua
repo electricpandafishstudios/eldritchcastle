@@ -5,7 +5,43 @@ newEntity{
 	always_remember = true,
 	does_block_move = true,
 	can_pass = {pass_wall=1},
-	block_sight = true,
+	block_sight = false,
 	air_level = -20,
 	dig = "FLOOR",
+}
+
+newEntity{
+	define_as = "COBBLE_BASE",
+	name = "cobble base", image = "terrain/marble_floor.png",
+	display = '.', color_r=209, color_g=209, color_b=209, back_color=colors.DARK,
+}
+
+newEntity{
+	define_as = "STONE_RAILING",
+	name = "stone railing", image = "terrain/granite_wall1.png",
+	display = '|', color_r=127, color_g=127, color_b=127, back_color=colors.LIGHT_DARK,
+	always_remember = true,
+	does_block_move = true,
+	can_pass = {pass_wall=1},
+	block_sight = false,
+	air_level = -20,
+	dig = "FLOOR",
+}
+
+newEntity{
+	define_as = "WINDOW",
+	name = "window", image = "terrain/granite_wall1.png",
+	display = '-', color_r=127, color_g=255, color_b=212, back_color=colors.LIGHT_DARK,
+	always_remember = true,
+	does_block_move = true,
+	can_pass = {pass_wall=1},
+	block_sight = false,
+	air_level = -20,
+	dig = "FLOOR",
+}
+
+newEntity{
+	define_as = "DIRT",
+	name = "dirt", image = "terrain/marble_floor.png",
+	display = '.', color_r=209, color_g=209, color_b=209, back_color=colors.UMBER,
 }

@@ -131,8 +131,9 @@ function _M:loaded()
 end
 
 function _M:setupDisplayMode()
-	print("[DISPLAY MODE] 32x32 ASCII/background")
+	print("[DISPLAY MODE] 16x16 ASCII/background")
 	Map:setViewPort(200, 20, self.w - 200, math.floor(self.h * 0.80) - 20, 32, 32, nil, 22, true)
+	
 	Map:resetTiles()
 	Map.tiles.use_images = false
 
