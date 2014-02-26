@@ -17,6 +17,6 @@
 -- Nicolas Casalini "DarkGod"
 -- darkgod@te4.org
 
-load("/data/general/grids/basic.lua")
-load("/data/general/grids/carpet.lua")
-load("/data/general/grids/special.lua")
+load("/data/general/grids/castle/basic.lua")
+load("/data/general/grids/castle/carpet.lua")
+load("/data/general/grids/castle/special.lua")
