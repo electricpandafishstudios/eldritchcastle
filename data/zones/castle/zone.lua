@@ -16,22 +16,29 @@
 --
 -- Nicolas Casalini "DarkGod"
 -- darkgod@te4.org
-
 return {
-	name = "dungeon",
-	level_range = {1, 5},
-	max_level = 10,
-	decay = {300, 800},
-	width = 100, height = 100,
-	persistent = "static",
+	name = "Castle",
+	level_range = {1, 1},
+	-- level_scheme = "player",
+	max_level = 3,
+	-- decay = {300, 800},
+	-- actor_adjust_level = function(zone, level, e) return zone.base_level + e:getRankLevelAdjust() end,
+	width = 500, height = 500,
+--	all_remembered = true,
+	all_lited = true,
+	persistent = "zone",
 	no_level_connectivity = true,
 	no_worldport = true,
 	generator =  {
-		map = { class = "engine.generator.map.Static" },
-		-- actor = {},
-		-- object = {},
+		map = {
+			class = "engine.generator.map.Static",
+		},
+		actor = {},
+		object = {},
+		trap = {},
 	},
-	levels = {
+	levels =
+	{
 		[1] = {
 			generator = { map = { map = "entrance" }, },
 		},

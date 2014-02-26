@@ -17,23 +17,11 @@
 -- Nicolas Casalini "DarkGod"
 -- darkgod@te4.org
 
-return {
-	name = "dungeon",
-	level_range = {1, 5},
-	max_level = 10,
-	decay = {300, 800},
-	width = 100, height = 100,
-	persistent = "static",
-	no_level_connectivity = true,
-	no_worldport = true,
-	generator =  {
-		map = { class = "engine.generator.map.Static" },
-		-- actor = {},
-		-- object = {},
-	},
-	levels = {
-		[1] = {
-			generator = { map = { map = "entrance" }, },
-		},
-	},
-}
+
+--Loads the Undead enemy types
+load("/data/general/npcs/undead/skeleton.lua")
+-- load("/data/general/npcs/undead/vampire.lua")
+-- load("/data/general/npcs/undead/zombie.lua")
+
+--Loads the Werewolves =
+-- load("/data/general/npcs/wolf.lua")
