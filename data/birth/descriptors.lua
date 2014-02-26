@@ -29,6 +29,7 @@ newBirthDescriptor{
 		max_level = 10,
 		lite = 4,
 		max_life = 25,
+		life = 25,
 	},
 	combat = 
 	{
