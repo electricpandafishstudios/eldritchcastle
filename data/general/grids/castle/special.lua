@@ -11,9 +11,14 @@ newEntity{
 }
 
 newEntity{
-	define_as = "COBBLE_BASE",
-	name = "cobble base", image = "terrain/marble_floor.png",
-	display = '.', color_r=209, color_g=209, color_b=209, back_color=colors.DARK,
+	define_as = "COBBLESTONE",
+	name = "cobblestone", image = "terrain/marble_floor.png",
+	display = '.', color_r=209, color_g=209, color_b=209, back_color=colors.DARK_GREY,
+}
+newEntity{
+	define_as = "BROKEN_COBBLESTONE",
+	name = "broken cobblestone", image = "terrain/marble_floor.png",
+	display = '.', color_r=90, color_g=90, color_b=90, back_color=colors.DARK_GREY,
 }
 
 newEntity{
@@ -31,7 +36,7 @@ newEntity{
 newEntity{
 	define_as = "WINDOW",
 	name = "window", image = "terrain/granite_wall1.png",
-	display = '-', color_r=127, color_g=255, color_b=212, back_color=colors.LIGHT_DARK,
+	display = '――', color_r=127, color_g=255, color_b=212, back_color=colors.LIGHT_DARK,
 	always_remember = true,
 	does_block_move = true,
 	can_pass = {pass_wall=1},

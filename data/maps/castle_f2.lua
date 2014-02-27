@@ -7,7 +7,8 @@ defineTile("-", "C_DOOR_OPEN", nil, nil, nil)
 defineTile(".", "FLOOR", nil, nil, nil)
 defineTile(",", "CARPET", nil, nil, nil)
 defineTile("3", "CASTLE_GATE", nil, nil, nil)
-defineTile("c", "COBBLE_BASE", nil, nil, nil)
+defineTile("c", "COBBLESTONE", nil, nil, nil)
+defineTile("C", "BROKEN_COBBLESTONE", nil, nil, nil)
 defineTile("$", "STONE_RAILING", nil, nil, nil)
 defineTile("w", "WINDOW", nil, nil, nil)
 defineTile("'", "DIRT", nil, nil, nil)
@@ -28,7 +29,7 @@ return [[
 ''''''#.,,,.#''''''
 ''''''#..,..#''''''
 ''''''##333##''''''
-'''''''$ccc$'''''''
-'''''''$ccc$'''''''
-'''''''$ccc$'''''''
-'''''''$ccc$''''''']]
+'''''''$cCC$'''''''
+'''''''$Ccc$'''''''
+'''''''$cCc$'''''''
+'''''''$ccC$''''''']]
