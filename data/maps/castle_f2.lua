@@ -1,35 +1,41 @@
-startx = 9
-starty = 11
-defineTile(">", "DOWN", nil, nil, nil)
-defineTile("#", "WALL", nil, nil, nil)
-defineTile("+", "C_DOOR", nil, nil, nil)
-defineTile("-", "C_DOOR_OPEN", nil, nil, nil)
-defineTile(".", "FLOOR", nil, nil, nil)
-defineTile(",", "CARPET", nil, nil, nil)
-defineTile("3", "CASTLE_GATE", nil, nil, nil)
-defineTile("c", "COBBLESTONE", nil, nil, nil)
-defineTile("C", "BROKEN_COBBLESTONE", nil, nil, nil)
-defineTile("$", "STONE_RAILING", nil, nil, nil)
-defineTile("w", "WINDOW", nil, nil, nil)
-defineTile("'", "DIRT", nil, nil, nil)
 
--- 7x7
+-- defineTile section
+defineTile("w", "WINDOW")
+defineTile("3", "CASTLE_GATE")
+defineTile("#", "WALL")
+defineTile("g", "GRASS")
+defineTile("|", "STONE_RAILING")
+defineTile("+", "C_DOOR")
+defineTile(",", "CARPET")
+defineTile(".", "FLOOR")
+defineTile("c", "COBBLESTONE")
+defineTile("d", "DIRT")
+defineTile("C", "BROKEN_COBBLESTONE")
 
+-- addSpot section
+
+-- addZone section
+
+-- ASCII map section
 return [[
-###################
-#.................#
-#..,,,,,,,,,,,,,..#
-#.,,,,,,,,,,,,,,,.#
-#..,,,,,,,,,,,,,..#
-#.......,,,.......#
-###w####+++####w###
-''''''#.,,,.#''''''
-''''''#.,,,.#''''''
-''''''#.,,,.#''''''
-''''''#.,,,.#''''''
-''''''#..,..#''''''
-''''''##333##''''''
-'''''''$cCC$'''''''
-'''''''$Ccc$'''''''
-'''''''$cCc$'''''''
-'''''''$ccC$''''''']]
+############################
+#..........................#
+#..,,,,,,,,,,,,,,,,,,,,,,..#
+#.,,,,,,,,,,,,,,,,,,,,,,,,.#
+#..,,,,,,,,,,,,,,,,,,,,,,..#
+#........,,,...............#
+###w#####,,,#####w##########
+gdddgdg##+++##gdddgdggdddgdg
+ddgdddd#.,,,.#ddgddddddgdddd
+dddddgd#.,,,.#dddddgddddddgd
+dgdgddd#.,,,.#dgdgddddgdgddd
+gdddddd#.,,,.#gddddddgdddddd
+ddddgdd#..,..#ddddgddddddgdd
+ddgdddg##333##ddgdddgddgdddg
+gdddgdgd|cCC|dgdddgdggdddgdg
+ddgddddd|Ccc|gddgddddddgdddd
+dddddgdg|cCc|ddddddgddddddgd
+dgdgdddd|ccC|gdgdgddddgdgddd
+gddddddg|CCc|dgddddddgdddddd
+ddddgddddccCgdddddgddddddgdd
+ddgdddgdgcCcddddgdddgddgdddg]]

@@ -48,5 +48,10 @@ newEntity{
 newEntity{
 	define_as = "DIRT",
 	name = "dirt", image = "terrain/marble_floor.png",
-	display = '.', color_r=209, color_g=209, color_b=209, back_color=colors.UMBER,
+	display = '.', color_r=185, color_g=140, color_b=75, back_color=colors.UMBER,
+}
+newEntity{
+	define_as = "GRASS",
+	name = "grass", image = "terrain/marble_floor.png",
+	display = '.', color_r=9, color_g=232, color_b=46, back_color=colors.UMBER,
 }

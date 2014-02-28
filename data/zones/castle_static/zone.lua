@@ -26,6 +26,7 @@ return {
 	persistent = "static",
 	no_level_connectivity = true,
 	no_worldport = true,
+	all_lited = true,
 	generator =  {
 		map = { class = "engine.generator.map.Static" },
 		-- actor = {},
