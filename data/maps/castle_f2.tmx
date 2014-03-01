@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="28" height="21" tilewidth="24" tileheight="24">
+<map version="1.0" orientation="orthogonal" width="91" height="21" tilewidth="24" tileheight="24">
  <tileset firstgid="1" name="tileset" tilewidth="24" tileheight="24">
   <image source="../../../../../../../My Documents/Downloads/tileset.png" width="384" height="384"/>
   <tile id="19">
@@ -69,14 +69,14 @@
    </properties>
   </tile>
  </tileset>
- <layer name="Terrain" width="28" height="21">
+ <layer name="Terrain" width="91" height="21">
   <data encoding="base64" compression="zlib">
-   eJzFk80NwyAMhRkiI3Bs2iUySiqxBLuXA096smzHIpAePqHgnxcbO6eU8sN8HkLq7YvQ9FZpseY/6/PQYu+8H3grd1noaXYrTqM0vkShEz4vIhLn2eQdo80S+uLFRWyaX0Qvml+rTfpf6Vlxns37J09vRh+lr9xNnuvRXlp3PJ8bkZM/L94MRma3Ns7G0akXOnf2AXpH1zz7dyRuZB+KqA96I/kj+8D9hGZV/GftA+rD23F9K/YBcH1Wrhn7gJPfLxpn2X74KrBz
+   eJztV9sNwyAMZIiO0M+2WaKjJBJLZPe2EpYcyw8ggTgqH6coPQzmuLhmCSEsCRE97wnTF0+ECXH/DE2XJfCa4icGzMfNOSDrAlpzmlJQT9M5B3hgrUu8vSrnN6BrPSX9cr09fF2vNedrqX5w9doTJC95gVQ/tHfqbTpfLl6F4604rHWP9bQ+RNJF0lTSPTJz43ctrgUH6z4Qzs6lVBfJ2/g3fO45cS04raftnQvOCeuSG1dSY3ruB5+3pXWvXPZw2p2mNu5oztK6Zy61nKVvTVyr71XS2quHa3xbGteCo/2+1GN501fzfckYK+5IDv7nbwj03tArl1qupkdp1UtZufzuvvMX7wTpLtw6lz17OPobacWtSeM5Yb3gHs5eO4eLYetr0NpbnhbnpSeyONAa9F6Z8R7ylDiv589xUEOor73lKXFnr1/KYV9LsR7y1DgPPZHFxbCt11fbwwfwimdH
   </data>
  </layer>
- <layer name="Tile Layer 2" width="28" height="21" opacity="0">
+ <layer name="Tile Layer 2" width="91" height="21" visible="0">
   <data encoding="base64" compression="zlib">
-   eJxjYMAOtkAxNeXwgVH7Ru3DBo7iwMegmJpy+DCt7MMFhkv8jdpHXftG8wP15PCBUftG7cMGAD/JngE=
+   eJztljEKgDAUxXr/83gFPZcILkItmEFe4AX+0tAhHdruY4y982ko22K9bu4oSQ0WR0lqsDhKUoPFUZIaLI5y7Z29tcc9dc/pWXvO+m29bu4oSQ0WR0lqsDhKUoPFUZIaLI7Sf0j/fKmud8i/jpLUYHGUpAaLoyQ1WBwlqcHiKLO3trMeygm1zUt1
   </data>
  </layer>
 </map>
