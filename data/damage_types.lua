@@ -129,6 +129,6 @@ newDamageType{
 
 
 -- Acid destroys potions
---newDamageType{
-	--name = "acid", type = "ACID", text_color = "#GREEN#",
---}
+newDamageType{
+	name = "acid", type = "ACID", text_color = "#GREEN#",
+}

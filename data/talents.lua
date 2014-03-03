@@ -79,12 +79,12 @@ newTalent{
 	end,
 }
 newTalent{
-	name = "Acid Spray",
+	name = "Particles",
 	type = {"role/combat", 1},
 	points = 1,
-	cooldown = 6,
-	sanity = 2,
-	range = 6,
+	cooldown = 0,
+	sanity = 0,
+	range = 10,
 	action = function(self, t)
 		local tg = {type="ball", range=self:getTalentRange(t), radius=1, talent=t}
 		local x, y = self:getTarget(tg)

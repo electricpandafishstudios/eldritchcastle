@@ -20,8 +20,8 @@
 
 --Loads the Undead enemy types
 load("/data/general/npcs/undead/skeleton.lua")
--- load("/data/general/npcs/undead/vampire.lua")
--- load("/data/general/npcs/undead/zombie.lua")
+load("/data/general/npcs/undead/vampire.lua")
+load("/data/general/npcs/undead/zombie.lua")
 
 --Loads the Werewolves =
 -- load("/data/general/npcs/wolf.lua")

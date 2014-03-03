@@ -36,7 +36,7 @@ newBirthDescriptor{
 		dam = 1, damtype = DamageType.PHYSICAL
 	},
 	
-	talents = {[ActorTalents.T_ATTACK] = 1},
+	talents = {[ActorTalents.T_ATTACK] = 1,},
 }
 
 newBirthDescriptor{
