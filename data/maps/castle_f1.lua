@@ -2,14 +2,17 @@ startx = 45
 starty = 90
 -- defineTile section
 defineTile("w", "WINDOW")
+defineTile("3", "CASTLE_GATE")
 defineTile("g", "GRASS")
 defineTile("#", "WALL")
 defineTile("|", "STONE_RAILING")
 defineTile("+", "C_DOOR")
+defineTile("<", "UP")
 defineTile(",", "CARPET")
-defineTile(">", "DOWN")
 defineTile(".", "FLOOR")
+defineTile("c", "COBBLESTONE")
 defineTile("d", "DIRT")
+defineTile("C", "BROKEN_COBBLESTONE")
 
 -- addSpot section
 
@@ -107,18 +110,18 @@ dddddgd#.,,,.#...............................................................#.,
 dgdgddd#.,,,.#...............................................................#.,,,.#dgdgddd
 gdddddd#.,,,.#...............................................................#.,,,.#gdddddd
 ddddgdd#.,,,.#...............................................................#.,,,.#ddddgdd
-ddgdddg#.,,,.#...............................>...............................#.,,,.#ddgdddg
+ddgdddg#.,,,.#...............................<...............................#.,,,.#ddgdddg
 dddgdg##.,,,.###############################+++###############################.,,,.##dddgdg
-dgdddd#..,,,................................,,,................................,,,..#dgdddd
-ddddg##..,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,..##dddgd
-gdgdd|...,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,...|dgddd
-ddddd##..,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,..##ddddd
-dddgdd#.............................................................................#dddgdd
-dgdddg##.....###########w#############w#############w#############w###########.....##dgdddg
-gdddgdg###.###gdddgdggdddgdggdddgdggdddgdggdddgdggdddgdggdddgdggdddgdggdddgdg###.###gdddgdg
-ddgddddgd#w#dgddgddddddgddddddgddddddgddddddgddddddgddddddgddddddgddddddgdddddd#w#ddddgdddd
-dddddgdddgdddddddddgddddddgddddddgddddddgddddddgddddddgddddddgddddddgddddddgddddddgddddddgd
-dgdgddddddddgddgdgddddgdgddddgdgddddgdgddddgdgddddgdgddddgdgddddgdgddddgdgddddgdgddddgdgddd
-gdddddddgdgdddgddddddgddddddgddddddgddddddgddddddgddddddgddddddgddddddgddddddgddddddgdddddd
-ddddgddgddddddddddgddddddgddddddgddddddgddddddgddddddgddddddgddddddgddddddgddddddgddddddgdd
-ddgdddgddddgddddgdddgddgdddgddgdddgddgdddgddgdddgddgdddgddgdddgddgdddgddgdddgddgdddgddgdddg]]
+dgdddd#..,,,..............................#.,,,.#..............................,,,..#dgdddd
+ddddg##..,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,#.,,,.#,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,..##dddgd
+gdgdd|...,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,#.,,,.#,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,...|dgddd
+ddddd##..,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,#.,,,.#,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,..##ddddd
+dddgdd#...................................#..,..#...................................#dddgdd
+dgdddg##.....###########w#############w#####333#####w#############w###########.....##dgdddg
+gdddgdg###.###gdddgdggdddgdggdddgdggdddgdgd|cCC|dgdddgdggdddgdggdddgdggdddgdg###.###gdddgdg
+ddgddddgd#w#dgddgddddddgddddddgddddddgddddd|Ccc|gddgddddddgddddddgddddddgdddddd#w#ddddgdddd
+dddddgdddgdddddddddgddddddgddddddgddddddgdg|cCc|ddddddgddddddgddddddgddddddgddddddgddddddgd
+dgdgddddddddgddgdgddddgdgddddgdgddddgdgdddd|ccC|gdgdgddddgdgddddgdgddddgdgddddgdgddddgdgddd
+gdddddddgdgdddgddddddgddddddgddddddgddddddg|CCc|dgddddddgddddddgddddddgddddddgddddddgdddddd
+ddddgddgddddddddddgddddddgddddddgddddddgddddccCgdddddgddddddgddddddgddddddgddddddgddddddgdd
+ddgdddgddddgddddgdddgddgdddgddgdddgddgdddgdgcCcddddgdddgddgdddgddgdddgddgdddgddgdddgddgdddg]]

@@ -24,8 +24,8 @@ return {
 	decay = {300, 800},
 	width = 100, height = 100,
 	persistent = "static",
-	no_level_connectivity = true,
-	no_worldport = true,
+	no_level_connectivity = false,
+	no_worldport = false,
 	all_lited = true,
 	generator =  {
 		map = { class = "engine.generator.map.Static" },
@@ -33,8 +33,12 @@ return {
 		-- object = {},
 	},
 	levels = {
-		[1] = {
+		[2] = {
 			generator = { map = { map = "castle_f2" }, },
 		},
+		[1] = {
+			generator = { map = { map = "castle_f1" }, level = {level.default_up = {x=10,y=10} }, },
+		},
+		
 	},
 }
