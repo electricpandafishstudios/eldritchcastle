@@ -1,89 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="91" height="105" tilewidth="24" tileheight="24">
- <tileset firstgid="1" name="tileset" tilewidth="24" tileheight="24">
-  <image source="../../../../../../../My Documents/Downloads/tileset.png" width="384" height="384"/>
-  <tile id="19">
-   <properties>
-    <property name="display" value="3"/>
-    <property name="value" value="&quot;CASTLE_GATE&quot;"/>
-   </properties>
-  </tile>
-  <tile id="35">
-   <properties>
-    <property name="display" value="#"/>
-    <property name="value" value="&quot;WALL&quot;"/>
-   </properties>
-  </tile>
-  <tile id="43">
-   <properties>
-    <property name="display" value="+"/>
-    <property name="value" value="&quot;C_DOOR&quot;"/>
-   </properties>
-  </tile>
-  <tile id="44">
-   <properties>
-    <property name="display" value=","/>
-    <property name="value" value="&quot;CARPET&quot;"/>
-   </properties>
-  </tile>
-  <tile id="45">
-   <properties>
-    <property name="display" value="w"/>
-    <property name="value" value="&quot;WINDOW&quot;"/>
-   </properties>
-  </tile>
-  <tile id="46">
-   <properties>
-    <property name="display" value="."/>
-    <property name="value" value="&quot;FLOOR&quot;"/>
-   </properties>
-  </tile>
-  <tile id="60">
-   <properties>
-    <property name="display" value="&lt;"/>
-    <property name="value" value="&quot;UP&quot;"/>
-   </properties>
-  </tile>
-  <tile id="62">
-   <properties>
-    <property name="display" value="&gt;"/>
-    <property name="value" value="&quot;DOWN&quot;"/>
-   </properties>
-  </tile>
-  <tile id="67">
-   <properties>
-    <property name="display" value="C"/>
-    <property name="value" value="&quot;BROKEN_COBBLESTONE&quot;"/>
-   </properties>
-  </tile>
-  <tile id="99">
-   <properties>
-    <property name="display" value="c"/>
-    <property name="value" value="&quot;COBBLESTONE&quot;"/>
-   </properties>
-  </tile>
-  <tile id="100">
-   <properties>
-    <property name="display" value="d"/>
-    <property name="value" value="&quot;DIRT&quot;"/>
-   </properties>
-  </tile>
-  <tile id="103">
-   <properties>
-    <property name="display" value="g"/>
-    <property name="value" value="&quot;GRASS&quot;"/>
-   </properties>
-  </tile>
-  <tile id="124">
-   <properties>
-    <property name="display" value="|"/>
-    <property name="value" value="&quot;STONE_RAILING&quot;"/>
-   </properties>
-  </tile>
- </tileset>
+ <tileset firstgid="1" source="../tilesets/tileset.tsx"/>
  <layer name="Terrain" width="91" height="105">
   <data encoding="base64" compression="zlib">
-   eJztnUFuwyAQRX0YL5vkCD1NJV8id28XseQSBgZiPth+i1HaTED4MRq/IFlZpmn62cSyeV3I7ZoL34sFuX1zo67rbLlYnZPbPzfq/p8x5/ns/Bf31+so6x4hV8vFqvf5FY/N36l76lVyNVxyc63zPYJ5e8bXAGtIcYnxTO1DONdIcRtgDVasrL19O9y3G5GNsL5zPWl9fQZ71fs6jhBbXs8I49T9lbquYx2r65yjWKx798PR15LqH6l742zM2dtB1ujtIBaXUudbMnP2rqmekeJSe84H63LWKZ6eng3rctZe56OuP2Ndc84H63LWted8sC5nnfM7q95hXc8a52vPGufTscb59KxxPg1rnE/DGufTscb59KxxvvascT4da5xPzxrn07DG+TSscT4da5xPzxrna88a59Oxxvn0rHE+DWucT8Ma59Oxxvn0rHG+9qxxPh1rnE/PGufTsMb5NKxxPh1rnE/PGudrz7rG+ebMnFfl7eFS4nwhy3DOq/Iu4eJ1vtRzu9v3vwa4fmWE12tx2eu5XWuPrxC1de35zki/TvNO9Wucbz/eFhecT8eacz4da8/Zh9WzYV3H2ut81PVnrDnn07DmnE/HOud3ON/+rHG+9qxxPh1rnE/PGufTsMb5NKxxPh1rnE/PGudrzxrn07HG+fSscT4Na5xPwxrn07HG+fSscb72rHE+HWucT88a59Owxvk0rHE+HWucT88a52vPGufTscb59KxxPg1rnE/DGufTsT6b830fgHWuf4S+l5qzVxzld+6se2HK92Jz9ozR1xLeH3P9ert34ZxEPLasS2qb39utZ/2Y7Od2LdejrutYx+ra63tEWVj9I+d7Fu+S+/W98PNHGZfiYjH1eN88vTNOjTt7rpaL5/vNdt89466SC7l4x+V6Ss04cu+51Hea2nHkymu2Zhw5X3h7ce91HznnqdvSceT+//8LYwrGHw==
+   eJztnUFuwjAQRXOYLAucoOppKuUS3L0sQEqNPR6b+NtJ3mJEy2DLeR5NHpYilmmaflexrF4XcpvmwvdiQW7b3KjrOlouVufkts+Nuv9HzHk+Oz/i+nwdZd0j5Gq5pOp9fsZt9bd1Tz1LroZLbq7XfLdg3p7xNcAaLC4xntY+hHONFJcB1pCKF2tv3w737UJkI6zvXE96vd6Dvep9HXuINa97hLF1f6Wu61jH6jrnKCnWvfvh6Gux+od1b5wTc/Z2kFf0dpAUl1LnWzJz9q6pnmFxqT3ng3U5a4unp2fDupy11/mo689Y15zzwbqcde05H6zLWef8LlXvsK5njfO1Z43z6VjjfHrWOJ+GNc6nYY3z6VjjfHrWOF971jifjjXOp2eN82lY43wa1jifjjXOp2eN87VnjfPpWON8etY4n4Y1zqdhjfPpWON8etY4X3vWOJ+ONc6nZ43zaVjjfBrWOJ+ONc6nZ43ztWdd43xzZs6z8vZwKXG+kGU451l5l3DxOp/13O76/a8Brl8Z4fWmuGz13G5qj88QtXXt+c5Iv7Z5W/0a59uOd4oLzqdjzTmfjrXn7CPVs2Fdx9rrfNT1Z6w559Ow5pxPxzrndzjf9qxxvvascT4da5xPzxrn07DG+TSscT4da5xPzxrna88a59Oxxvn0rHE+DWucT8Ma59Oxxvn0rHG+9qxxPh1rnE/PGufTsMb5NKxxPh1rnE/PGudrzxrn07HG+fSscT4Na5xPwxrn07E+mvP9POJ7cNa5/hH6njVnr9jL79yl7oWW78Xm7BmjryW8P+b69XrvwjmJeKxZl9Q2v7dbz/o2pZ/bTbkedV3HOlbXXt8jyiLVP3K+l+Jdcr++Fn5+L+MsLimmHu+bp3fG1rij52q5eL7frPfdM+4suZCLd1yup9SMI/ees77T1I4jV16zNePI+cLbi3uve885T92WjiP3//8/g6HGLQ==
   </data>
  </layer>
  <layer name="Tile Layer 2" width="91" height="105" visible="0">
