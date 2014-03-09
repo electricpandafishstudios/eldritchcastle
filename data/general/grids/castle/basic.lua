@@ -29,20 +29,20 @@ newEntity{
 
 newEntity{
 	define_as = "UP",
-	name = "previous level",
+	name = "go up a level",
 	display = '<', color_r=255, color_g=255, color_b=0, back_color=colors.GREY,
 	notice = true,
 	always_remember = true,
-	change_level = -1,
+	change_level = 1,
 }
 
 newEntity{
 	define_as = "DOWN",
-	name = "next level",
+	name = "go doen a level",
 	display = '>', color_r=255, color_g=255, color_b=0, back_color=colors.GREY,
 	notice = true,
 	always_remember = true,
-	change_level = 1,
+	change_level = =1,
 }
 
 newEntity{
