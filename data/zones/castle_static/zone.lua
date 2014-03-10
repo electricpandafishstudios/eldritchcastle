@@ -33,6 +33,9 @@ return {
 		-- object = {},
 	},
 	levels = {
+		[4] = {
+			generator = { map = { map = "castle_f4" }, },
+		},
 		[3] = {
 			generator = { map = { map = "castle_f3" }, },
 		},
