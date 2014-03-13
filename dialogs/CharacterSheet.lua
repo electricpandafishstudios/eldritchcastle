@@ -137,7 +137,7 @@ function _M:drawDialog(kind)
 		w = self.w * (0.25 + 0.125) 	 
 		-- start on third column
 		
-        s:drawStringBlended(self.font, "PER : "..(player:getPer()), w, h, 255, 255, 0, true) h = h + self.font_h
+        s:drawStringBlended(self.font, "ALR : "..(player:getAlr()), w, h, 255, 255, 0, true) h = h + self.font_h
 		s:drawStringBlended(self.font, "LCK : "..(player:getLck()), w, h, 255, 255, 255, true) h = h + self.font_h
         
     elseif kind=="attack" then
@@ -193,7 +193,7 @@ function _M:dump()
     
     w1(("MEN:  %d"):format(player:getMen()))
 
-    w1(("PER:  %d"):format(player:getPer()))
+    w1(("ALR:  %d"):format(player:getAlr()))
 
     fff:close()
 
