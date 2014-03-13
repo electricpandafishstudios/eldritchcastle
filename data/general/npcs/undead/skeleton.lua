@@ -26,7 +26,7 @@ newEntity{
 	display = "s", color=colors.WHITE,
 	desc = [[White and fleshless!]],
 	ai = "dumb_talented_simple", ai_state = { talent_in=3, },
-	stats = { con=5, men=5, per=5, luck = 5 },
+	stats = { con=5, men=5, alr=5, luck = 5 },
 	inven = {HAND = 1},
 	combat_armor = 0,
 }	

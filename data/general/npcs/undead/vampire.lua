@@ -26,7 +26,7 @@ newEntity{
 	display = "v", color=colors.WHITE,
 	desc = [[Their pale faces are only ever stained with the blood of their prey.]],
 	ai = "dumb_talented_simple", ai_state = { talent_in=3, },
-	stats = { con=5, men=5, per=5, luck = 5 },
+	stats = { con=5, men=5, alr=5, luck = 5 },
 	inven = {HAND = 1},
 	combat_armor = 0,
 }	

@@ -41,14 +41,14 @@ newBirthDescriptor{
 
 newBirthDescriptor{
 	type = "role",
-	name = "Adventurer",
+	name = "Champion",
 	desc =
 	{
 		"Adventure!",
 		"<Choose this class to start with a myriad of the currently implemented items>",
 		"[Mechanical Description goes here]",
 	},
-	stats = {con = 0, men = 0, per = 0, lck = 0	},
+	stats = {con = 0, men = 0, alr = 0, lck = 0	},
 	copy = {
 		resolvers.equip{
 								{type="weapon", subtype="bludgeoning", name="Chair Leg", autoreq=true, },},
@@ -66,25 +66,25 @@ newBirthDescriptor{
 
 newBirthDescriptor{
 	type = "role",
-	name = "Reasearcher / Scientist / Archeologist",
+	name = "Anthropologist",
 	desc =
 	{
 		"I read about this castle in a book once!",
 		"[Mechanical Description goes here]",
 	},
-	stats = {con = -1, men = 3, per = -1, lck = -1},
+	stats = {con = -1, men = 3, alr = -1, lck = -1},
 	talents = {},
 }
 
 newBirthDescriptor{
 	type = "role",
-	name = "Romantic",
+	name = "Lover",
 	desc =
 	{
 		"Love is in the air!",
 		"[Mechanical Description goes here]",
 	},
-	stats = {con = -1, men = -1, per = 3, lck = -1},
+	stats = {con = -1, men = -1, alr = 3, lck = -1},
 	talents = {},
 }
 
@@ -96,6 +96,6 @@ newBirthDescriptor{
 		"I AM LOVECRAFT!",
 		"[Mechanical Description goes here]",
 	},
-	stats = {con = -1, men = -1, per = -1, lck = 3},
+	stats = {con = -1, men = -1, alr = -1, lck = 3},
 	talents = {},
 }

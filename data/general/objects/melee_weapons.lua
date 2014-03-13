@@ -37,19 +37,19 @@ newEntity{
 newEntity{ base = "BASE_CLUB",
 	name = "Chair Leg",
 	level_range = {1, 10},
-	require = { stat = { con= 6}, },
+	require = { stat = { con= 3}, },
 	combat = { dam = 0.6, damtype = DamageType.BASHING, },
 }
 newEntity{ base = "BASE_CANDLESTICK",
 	name = "Candlestick",
 	level_range = {1, 10},
-	require = { stat = { con= 7}, },
+	require = { stat = { con= 4}, },
 	combat = { dam = 0.8, damtype = DamageType.BASHING, },
 }
 newEntity{ base = "BASE_SILVER_CANDLESTICK",
 	name = "Silver Candlestick",
 	level_range = {1, 10},
-	require = { stat = {con = 8}, },
+	require = { stat = {con = 4}, },
 	combat = { dam = 0.8, damtype = DamageType.SILVER_BASHING, },
 }
 
@@ -80,25 +80,25 @@ newEntity{
 newEntity{ base = "BASE_KNIFE",
 	name = "Dagger",
 	level_range = {1, 10},
-	require = { stat = { con= 7}, },
+	require = { stat = { con= 4}, },
 	combat = { dam = 0.7, damtype = DamageType.SLASHING, },
 }
 newEntity{ base = "BASE_KNIFE",
 	name = "Cleaver",
 	level_range = {1, 10},
-	require = { stat = { con= 8}, },
+	require = { stat = { con= 4}, },
 	combat = { dam = 0.8, damtype = DamageType.SLASHING, },
 }
 newEntity{ base = "BASE_SILVER_KNIFE",
 	name = "Silver Dagger",
 	level_range = {1, 10},
-	require = { stat = { con= 7}, },
+	require = { stat = { con= 4}, },
 	combat = { dam = 0.7, damtype = DamageType.SILVER_SLASHING, },
 }
 newEntity{ base = "BASE_SILVER_KNIFE",
 	name = "Silver Cleaver",
 	level_range = {1, 10},
-	require = { stat = { con= 8}, },
+	require = { stat = { con= 4}, },
 	combat = { dam = 0.8, damtype = DamageType.SILVER_SLASHING, },
 }
 

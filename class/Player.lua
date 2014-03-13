@@ -55,12 +55,12 @@ function _M:init(t, no_default)
 	t.subtype = t.subtype or "player"
 	t.faction = t.faction or "players"
 
-	t.lite = t.lite or 0
-	t.old_life = 0
+	t.lite = t.lite or 4
+	t.old_life = 0 
 
 	mod.class.Actor.init(self, t, no_default)
 	engine.interface.PlayerHotkeys.init(self, t)
-
+	
 	self.descriptor = {}
 end
 
@@ -214,8 +214,8 @@ end
 function _M:playerFOV()
 	-- Clean FOV before computing it
 	game.level.map:cleanFOV()
-	--self.lite = math.floor(0.4 * self:getPer())
-	self.sight = 2 * self:getPer()
+	self.lite = (self:getAlr() - 1) / 2
+	self.sight = self:getAlr() * 2
 	-- Compute both the normal and the lite FOV, using cache
 	self:computeFOV(self.sight or 20, "block_sight", function(x, y, dx, dy, sqdist)
 		game.level.map:apply(x, y, fovdist[sqdist])

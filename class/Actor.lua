@@ -84,12 +84,14 @@ function _M:getWeaponDam()
 end
 
 function _M:init(t, no_default)
+
 	-- Define some basic combat stats
 	self.energyBase = 0
 	self.combat_armor = 0
 	self.moved_this_turn = 0
+	self.max_action_points = 5
 
-	t.max_actions = t.max_actions or 5
+	t.max_actions = t.max_actions or  self.max_action_points or 5
 	
 	-- Default regen
 	t.sanity_regen = t.sanity_regen or 0
@@ -193,7 +195,7 @@ Stats: %d /  %d / %d
 	self.life, self.life * 100 / self.max_life,
 	self:getCon(),
 	self:getMen(),
-	self:getPer(),
+	self:getAlr(),
 	self.desc or ""
 	)
 end
@@ -210,10 +212,12 @@ function _M:die(src)
 end
 
 function _M:levelup()
-	self.max_life = self.max_life + 2
-
-	self:incMaxSanity(3)
-
+	-- increment stats
+	self:incStat(STAT_CON, 1)
+	self:incStat(STAT_ALR, 1)
+	self:incStat(STAT_MEN, 1)
+	self:incStat(STAT_LCK, 1)
+	
 	-- Heal upon new level
 	self.life = self.max_life
 end
@@ -221,10 +225,21 @@ end
 --- Notifies a change of stat value
 function _M:onStatChange(stat, v)
 	if stat == self.STAT_CON then
-		self.max_life = self.max_life + 2
+		self.max_life = 90 + self:getCon() * 10
+		self.combat.damage = 0.5 + (2 * self:getCon() + self:getMen()) / 15
 	end
 	if stat == self.STAT_MEN then
-		self.max_sanity = self.max_sanity + 2
+		self.max_sanity = 90 + self:getMen() * 10
+		self.combat.damage = 0.5 + (2 * self:getCon() + self:getMen()) / 15
+	end
+	if stat == self.STAT_ALR then
+		self.max_actions = 5 + math.floor(self:getAlr() / 2)
+		self.max_action_points = max_actions or 5 + math.floor(self:getAlr() / 2)
+		self.lite = (self:getAlr() - 1) / 2
+		self.sight = 2 * self:getAlr()
+	end
+	if stat == self.STAT_Lck then
+		self.ego_chance = 2 ^ (self.getLck() - 5)
 	end
 end
 

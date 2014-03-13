@@ -24,7 +24,7 @@ long_name = "The Eldritch Castle"
 short_name = "eldritch_castle"
 author = { "ElectricPandaFish", "elp@na.org" }
 homepage = "http://te4.org/"
-version = {0,2,9}
+version = {0,3,1}
 engine = {1,1,5,"te4"}
 description = [[
 add a desciprion here later.

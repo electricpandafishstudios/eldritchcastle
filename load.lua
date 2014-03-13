@@ -48,10 +48,10 @@ ActorResource:defineResource("Sanity", "sanity", nil, "sanity_regen", "Sanity re
 ActorResource:defineResource("Action Points", "actions", nil, "actions_regen", "AP represent the actions that can be taken each turn.")
 
 -- Actor stats
-ActorStats:defineStat("Physical", 	"con", 10, 1, 100, "Defines the physical constitution of the character.")
-ActorStats:defineStat("Mental", 	"men", 10, 1, 100, "Defines the mental constitution of the character.")
-ActorStats:defineStat("Perception", "per", 10, 1, 100, "Defines the character's awareness.")
-ActorStats:defineStat("Luck",		"lck", 10, 1, 100, "Luckiness")
+ActorStats:defineStat("Constitution", 	"con", 5, 1, 10, "Defines the physical constitution of the character.")
+ActorStats:defineStat("Alertness",	 	"alr", 5, 1, 10, "Defines the character's awareness.")
+ActorStats:defineStat("Luck",			"lck", 5, 1, 10, "Luckiness")
+ActorStats:defineStat("Mental", 		"men", 5, 1, 10, "Defines the mental constitution of the character.")
 
 --Actor inventory
 ActorInventory:defineInventory("INVEN", "Inventory", false, "The character's inventory.")
