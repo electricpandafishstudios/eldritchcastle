@@ -84,7 +84,6 @@ function _M:getWeaponDam()
 end
 
 function _M:init(t, no_default)
-
 	-- Define some basic combat stats
 	self.energyBase = 0
 	self.combat_armor = 0
@@ -187,15 +186,16 @@ function _M:tooltip()
 	return ([[%s%s
 #00ffff#Level: %d
 #ff0000#HP: %d (%d%%)
-Stats: %d /  %d / %d
+Stats: %d /  %d / %d / %d
 %s]]):format(
 	self:getDisplayString(),
 	self.name,
 	self.level,
 	self.life, self.life * 100 / self.max_life,
 	self:getCon(),
-	self:getMen(),
 	self:getAlr(),
+	self:getLck(),
+	self:getMen(),
 	self.desc or ""
 	)
 end
@@ -215,8 +215,8 @@ function _M:levelup()
 	-- increment stats
 	self:incStat(STAT_CON, 1)
 	self:incStat(STAT_ALR, 1)
-	self:incStat(STAT_MEN, 1)
 	self:incStat(STAT_LCK, 1)
+	self:incStat(STAT_MEN, 1)
 	
 	-- Heal upon new level
 	self.life = self.max_life
@@ -228,10 +228,6 @@ function _M:onStatChange(stat, v)
 		self.max_life = 90 + self:getCon() * 10
 		self.combat.damage = 0.5 + (2 * self:getCon() + self:getMen()) / 15
 	end
-	if stat == self.STAT_MEN then
-		self.max_sanity = 90 + self:getMen() * 10
-		self.combat.damage = 0.5 + (2 * self:getCon() + self:getMen()) / 15
-	end
 	if stat == self.STAT_ALR then
 		self.max_actions = 5 + math.floor(self:getAlr() / 2)
 		self.max_action_points = max_actions or 5 + math.floor(self:getAlr() / 2)
@@ -240,6 +236,10 @@ function _M:onStatChange(stat, v)
 	end
 	if stat == self.STAT_Lck then
 		self.ego_chance = 2 ^ (self.getLck() - 5)
+	end
+	if stat == self.STAT_MEN then
+		self.max_sanity = 90 + self:getMen() * 10
+		self.combat.damage = 0.5 + (2 * self:getCon() + self:getMen()) / 15
 	end
 end
 
