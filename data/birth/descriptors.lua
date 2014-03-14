@@ -28,12 +28,12 @@ newBirthDescriptor{
 	copy = {
 		max_level = 10,
 		lite = 4,
-		max_life = 25,
-		life = 25,
+		max_life = 90,
+		life = 90,
 	},
 	combat = 
 	{
-		dam = 1, damtype = DamageType.PHYSICAL
+		dam = 0.5, damtype = DamageType.PHYSICAL
 	},
 	
 	talents = {[ActorTalents.T_ATTACK] = 1,},
@@ -60,6 +60,10 @@ newBirthDescriptor{
 								{type="weapon", subtype="slashing", name="Silver Cleaver"},
 								{type="weapon", subtype="stabbing", name="Wooden Stake"},
 						   },
+	},	
+	combat =
+	{
+		-- dam = ,
 	},
 	talents = {},
 }

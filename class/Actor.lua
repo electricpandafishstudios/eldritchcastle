@@ -185,19 +185,36 @@ end
 function _M:tooltip()
 	return ([[%s%s
 #00ffff#Level: %d
-#ff0000#HP: %d (%d%%)
-Stats: %d /  %d / %d / %d
+%sHealth: %s
+#ff0000#Stats: %d /  %d / %d / %d	
 %s]]):format(
 	self:getDisplayString(),
 	self.name,
 	self.level,
-	self.life, self.life * 100 / self.max_life,
+	self:lifeIndicatorColor(),
+	self:lifeIndicatorText(),
 	self:getCon(),
 	self:getAlr(),
 	self:getLck(),
 	self:getMen(),
 	self.desc or ""
 	)
+end
+
+function _M:lifeIndicatorColor()
+	local percentLife = self.life * 100 / self.max_life
+	if percentLife >= 95 then return "#000fff#"
+	elseif 95 > percentLife and percentLife <= 50 then return "#ff0000#"
+	elseif 50 > percentLife and percentLife <= 5 then return "#ff0000#"
+	elseif 5 > percentLife then return "#ff0000#" end
+end
+
+function _M:lifeIndicatorText()
+	local percentLife = self.life * 100 / self.max_life
+	if percentLife >= 95 then return "unharmed"
+	elseif 95 > percentLife and percentLife <= 50 then return "injured"
+	elseif 50 > percentLife and percentLife <= 5 then return "wounded"
+	elseif 5 > percentLife then return "mortally wounded" end
 end
 
 function _M:die(src)
