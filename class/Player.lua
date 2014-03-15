@@ -295,7 +295,6 @@ function _M:restCheck()
 
 	-- Check resources, make sure they CAN go up, otherwise we will never stop
 	if self.life < self.max_life and self.life_regen > 0 then return true end
-
 	return false, "life at maximum"
 end
 

@@ -203,18 +203,18 @@ end
 
 function _M:lifeIndicatorColor()
 	local percentLife = self.life * 100 / self.max_life
-	if percentLife >= 95 then return "#000fff#"
-	elseif 95 > percentLife and percentLife <= 50 then return "#ff0000#"
-	elseif 50 > percentLife and percentLife <= 5 then return "#ff0000#"
-	elseif 5 > percentLife then return "#ff0000#" end
+	if percentLife >= 95 then return "#00ff00#"
+	elseif 95 > percentLife and percentLife >= 50 then return "#ffff00#"
+	elseif 50 > percentLife and percentLife >= 5 then return "#ff7700#"
+	elseif 5 > percentLife then return "#c90000#" end
 end
 
 function _M:lifeIndicatorText()
 	local percentLife = self.life * 100 / self.max_life
 	if percentLife >= 95 then return "unharmed"
-	elseif 95 > percentLife and percentLife <= 50 then return "injured"
-	elseif 50 > percentLife and percentLife <= 5 then return "wounded"
-	elseif 5 > percentLife then return "mortally wounded" end
+	elseif 95 > percentLife and percentLife >= 51 then return "injured"
+	elseif 51 > percentLife and percentLife >= 6 then return "wounded"
+	elseif  6 > percentLife then return "mortally wounded" end
 end
 
 function _M:die(src)
