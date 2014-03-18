@@ -242,21 +242,21 @@ end
 --- Notifies a change of stat value
 function _M:onStatChange(stat, v)
 	if stat == self.STAT_CON then
-		self.max_life = 90 + self:getCon() * 10
-		self.combat.damage = 0.5 + (2 * self:getCon() + self:getMen()) / 15
+		self.max_life = 15 +  3 * self:getCon()
+		self.combat.damage = self:getCon() - 5 + (self:getCon() - 5) / 2
 	end
 	if stat == self.STAT_ALR then
 		self.max_actions = 5 + math.floor(self:getAlr() / 2)
 		self.max_action_points = max_actions or 5 + math.floor(self:getAlr() / 2)
-		self.lite = (self:getAlr() - 1) / 2
+		self.lite = math.floor((self:getAlr() - 1) / 2)
 		self.sight = 2 * self:getAlr()
 	end
 	if stat == self.STAT_Lck then
-		self.ego_chance = 2 ^ (self.getLck() - 5)
+		self.ego_chance = self:getLck()
 	end
 	if stat == self.STAT_MEN then
-		self.max_sanity = 90 + self:getMen() * 10
-		self.combat.damage = 0.5 + (2 * self:getCon() + self:getMen()) / 15
+		self.max_sanity = 90 + 10 * self:getMen()
+		self.combat.damage = self:getCon() - 5 + math.floor((self:getCon() - 5) / 2)
 	end
 end
 
