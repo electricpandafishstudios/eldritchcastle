@@ -57,9 +57,8 @@ function _M:attackTarget(target, no_actions)
 	if weapon then
 		local damage_type = weapon.combat.damtype or self.combat.damtype or DamageType.PHYSICAL
 		local weapon_damage = weapon.combat.dam or 0
-		local super_modifier = self:getSuperModifier(weapon, target)
-		local sub_modifier = self:getSubModifier(weapon, target)
-		self:attackTargetWith(target, damage_type, weapon_damage, super_modifier, sub_modifier)
+		local damage_modifier = self:getDamageModifier(weapon, target)
+		self:attackTargetWith(target, damage_type, weapon_damage, damage_modifier)
 	else
 		local damage_type = self.combat.damtype or DamageType.PHYSICAL
 		self:attackTargetWith(target, damage_type)
@@ -92,30 +91,34 @@ function _M:attackTargetWith(target, damage_type, weapon_damage, super_modifier,
 	self:onHit(damage_type, dam, target)
 end
 
+function _M:getDamageModifier(weapon, target)
+	local damageModifier = 1
+	damage_modifier = damage_modifier + self:getSuperModifier(weapon, target)
+	damage_modifier = damage_modifier + self:getSubModifier(weapon, target)
+	return damage_modifier
+end
+
 function _M:getSuperModifier(weapon, target)
-	local damage = weapon.combat.dam or 0
 	if DamageType:get(target.combat.weakness).supertype ==  nil then return end
 	if DamageType:get(weapon.combat.damtype).supertype == nil then return end
 	if weapon.combat.dam then
 		damage = damage * self:getCon()
 		if DamageType:get(weapon.combat.damtype).supertype == DamageType:get(target.combat.weakness).supertype then
-			return (damage * 0.50)
+			return 1 / 2
 		end
 		if DamageType:get(weapon.combat.damtype).supertype == DamageType:get(target.combat.strength).supertype then
-			return (damage * -0.50)
+			return 1 / 2
 		end
 	end
 end
 
 function _M:getSubModifier(weapon, target)
-	local damage = weapon.combat.dam or 0
 	if weapon.combat.dam then
-		damage = damage * self:getCon()
 		if DamageType:get(weapon.combat.damtype).subtype == DamageType:get(target.combat.weakness).subtype then
-			return damage 
+			return 1 / 1
 		end
 		if DamageType:get(weapon.combat.damtype).subtype == DamageType:get(target.combat.strength).subtype then
-			return -damage
+			return 1 / 1
 		end
 	end
 end
