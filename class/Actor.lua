@@ -243,7 +243,7 @@ end
 function _M:onStatChange(stat, v)
 	if stat == self.STAT_CON then
 		self.max_life = 15 +  3 * self:getCon()
-		self.combat.damage = self:getCon() - 5 + (self:getCon() - 5) / 2
+		self.combat.damage = math.max(1, self:getCon() - 5 + (self:getCon() - 5) / 2)
 	end
 	if stat == self.STAT_ALR then
 		self.max_actions = 5 + math.floor(self:getAlr() / 2)
@@ -256,7 +256,7 @@ function _M:onStatChange(stat, v)
 	end
 	if stat == self.STAT_MEN then
 		self.max_sanity = 90 + 10 * self:getMen()
-		self.combat.damage = self:getCon() - 5 + math.floor((self:getCon() - 5) / 2)
+		self.combat.damage = math.max(1, self:getCon() - 5 + math.floor((self:getCon() - 5) / 2))
 	end
 end
 
