@@ -126,6 +126,10 @@ end
 
 function _M:getDamageModifier(weapon, target)
 	local damage_modifier = 1
+	if weapon then
+		damage_modifier = damage_modifier + self:getSuperModifier(weapon, target)
+		damage_modifier = damage_modifier + self:getSubModifier(weapon, target)
+	end
 	return damage_modifier
 end
 
