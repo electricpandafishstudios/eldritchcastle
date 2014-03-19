@@ -69,26 +69,59 @@ function _M:attackTarget(target, no_actions)
 	end
 end
 
-function _M:attackTargetWith(target, damage_type, weapon_damage, super_modifier, sub_modifier)
+function _M:attackTargetWith(target, damage_type, weapon_damage, damage_modifier)
 	local weapon_damage = weapon_damage or 0
-	local super_modifier = super_modifier or 0
-	local sub_modifier = sub_modifier or 0
+	local damage_modifier = damage_modifier or 1
 	
+	local init_dam = self.combat.dam + (weapon_damage * damage_modifier)
+	local calc_dam = math.floor(math.max(0, init_dam - target.combat_armor))
 	
-	if (super_modifier > 0) and (sub_modifier > 0) then
-		local hit_type = "super crit"
-	elseif (super_modifier > 0) or (sub_modifier > 0) then
-		local hit_type = "crit"
-	elseif not (super_modifier < 0) or (sub_modifier < 0) then
-		local hit_type = "normal"
+	if calc_dam == 0 then 
+		self:deflectAttack(weapon_damage, damage_type)
 	else
-		local hit_type = "weak"
+		DamageType:get(damage_type).projector(self, target.x, target.y, damage_type, dam, hit_type)
+		target:onHit(damage_type, dam)
 	end
 	
-	local wpn = weapon_damage * self:getCon()
-	local dam = (self.combat.dam + self:getCon()) + (wpn + super_modifier + sub_modifier)
-	DamageType:get(damage_type).projector(self, target.x, target.y, damage_type, dam, hit_type)
-	self:onHit(damage_type, dam, target)
+
+	--if (super_modifier > 0) and (sub_modifier > 0) then
+	--	local hit_type = "super crit"
+	--elseif (super_modifier > 0) or (sub_modifier > 0) then
+	--	local hit_type = "crit"
+	--elseif not (super_modifier < 0) or (sub_modifier < 0) then
+	--	local hit_type = "normal"
+	--else
+	--	local hit_type = "weak"
+	--end
+end
+
+function _M:deflectAttack(damage_type, weapon_damage)
+	self:attackTargetWith(self, damage_type, weapon_damage + self.combat_armor, 1 / 4)	
+end
+
+function _M:onHit(damtype, dam)
+	if damtype == DamageType.ELDRITCH then
+			self:setEffect(game.player.EFF_MADNESS, 1, {power = ((dam / 1) * 0.25)})
+		end
+		
+		if damtype == DamageType.SANGUINE then
+			self:heal(0.50 * dam, self)
+		end
+		
+		if damtype == DamageType.INFECTED then
+			self:setEffect(game.player.EFF_POISON, 5, {power = (dam * 0.25)})
+		end
+end
+
+function _M:getDamageType()
+	local weapon = self:getWeaponFromSlot("HAND")
+	local damage_type
+	if weapon then
+		damage_type = weapon.combat.damtype or self.combat.damtype or DamageType.PHYSICAL
+	else
+		damage_type = self.combat.damtype or DamageType.PHYSICAL
+	end
+	return damage_type
 end
 
 function _M:getDamageModifier(weapon, target)
@@ -121,29 +154,4 @@ function _M:getSubModifier(weapon, target)
 			return 1 / 1
 		end
 	end
-end
-
-function _M:getDamageType()
-	local weapon = self:getWeaponFromSlot("HAND")
-	local damage_type
-	if weapon then
-		damage_type = weapon.combat.damtype or self.combat.damtype or DamageType.PHYSICAL
-	else
-		damage_type = self.combat.damtype or DamageType.PHYSICAL
-	end
-	return damage_type
-end
-
-function _M:onHit(damtype, dam, target)
-	if damtype == DamageType.ELDRITCH then
-			target:setEffect(game.player.EFF_MADNESS, 1, {power = ((dam / 1) * 0.25)})
-		end
-		
-		if damtype == DamageType.SANGUINE then
-			self:heal(0.50 * dam, self)
-		end
-		
-		if damtype == DamageType.INFECTED then
-			target:setEffect(game.player.EFF_POISON, 5, {power = (dam * 0.25)})
-		end
 end
