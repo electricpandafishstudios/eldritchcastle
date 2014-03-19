@@ -1,4 +1,3 @@
-
 --Bludgeoning Weapons
 newEntity{
 	define_as = "BASE_CLUB",
@@ -38,19 +37,19 @@ newEntity{ base = "BASE_CLUB",
 	name = "Chair Leg",
 	level_range = {1, 10},
 	require = { stat = { con= 3}, },
-	combat = { dam = 0.6, damtype = DamageType.BASHING, },
+	combat = { dam = 2, damtype = DamageType.BASHING, },
 }
 newEntity{ base = "BASE_CANDLESTICK",
 	name = "Candlestick",
 	level_range = {1, 10},
 	require = { stat = { con= 4}, },
-	combat = { dam = 0.8, damtype = DamageType.BASHING, },
+	combat = { dam = 3, damtype = DamageType.BASHING, },
 }
 newEntity{ base = "BASE_SILVER_CANDLESTICK",
 	name = "Silver Candlestick",
 	level_range = {1, 10},
 	require = { stat = {con = 4}, },
-	combat = { dam = 0.8, damtype = DamageType.SILVER_BASHING, },
+	combat = { dam = 3, damtype = DamageType.SILVER_BASHING, },
 }
 
 --Slashing Weapons
@@ -81,25 +80,25 @@ newEntity{ base = "BASE_KNIFE",
 	name = "Dagger",
 	level_range = {1, 10},
 	require = { stat = { con= 4}, },
-	combat = { dam = 0.7, damtype = DamageType.SLASHING, },
+	combat = { dam = 5, damtype = DamageType.SLASHING, },
 }
 newEntity{ base = "BASE_KNIFE",
 	name = "Cleaver",
 	level_range = {1, 10},
 	require = { stat = { con= 4}, },
-	combat = { dam = 0.8, damtype = DamageType.SLASHING, },
+	combat = { dam = 6, damtype = DamageType.SLASHING, },
 }
 newEntity{ base = "BASE_SILVER_KNIFE",
 	name = "Silver Dagger",
 	level_range = {1, 10},
 	require = { stat = { con= 4}, },
-	combat = { dam = 0.7, damtype = DamageType.SILVER_SLASHING, },
+	combat = { dam = 5, damtype = DamageType.SILVER_SLASHING, },
 }
 newEntity{ base = "BASE_SILVER_KNIFE",
 	name = "Silver Cleaver",
 	level_range = {1, 10},
 	require = { stat = { con= 4}, },
-	combat = { dam = 0.8, damtype = DamageType.SILVER_SLASHING, },
+	combat = { dam = 6, damtype = DamageType.SILVER_SLASHING, },
 }
 
 --Stabbing Weapons
@@ -141,17 +140,17 @@ newEntity{ base = "BASE_SHANK",
 	name = "Wooden Stake",
 	level_range = {1, 10},
 	require = { stat = { con= 4}, },
-	combat = { dam = 0.4, damtype = DamageType.STABBING, },
+	combat = { dam = 2, damtype = DamageType.STABBING, },
 }
 newEntity{ base = "BASE_RAPIER",
 	name = "Rapier",
 	level_range = {1, 10},
 	require = { stat = { con= 4}, },
-	combat = { dam = 1.0, damtype = DamageType.STABBING, },
+	combat = { dam = 8, damtype = DamageType.STABBING, },
 }
 newEntity{ base = "BASE_SILVER_RAPIER",
 	name = "Silver Rapier",
 	level_range = {1, 10},
 	require = { stat = { con= 4}, },
-	combat = { dam = 1.0, damtype = DamageType.SILVER_STABBING, },
+	combat = { dam = 8, damtype = DamageType.SILVER_STABBING, },
 }
