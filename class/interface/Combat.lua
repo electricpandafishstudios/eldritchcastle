@@ -73,14 +73,14 @@ function _M:attackTargetWith(target, damage_type, weapon_damage, damage_modifier
 	local weapon_damage = weapon_damage or 0
 	local damage_modifier = damage_modifier or 1
 	
-	local init_dam = self.combat.dam + (weapon_damage * damage_modifier)
+	local init_dam = self.combat.dam + (weapon_damage * damage_modifier)	
 	local calc_dam = math.floor(math.max(0, init_dam - target.combat_armor))
 	
 	if calc_dam == 0 then 
 		self:deflectAttack(weapon_damage, damage_type)
 	else
-		DamageType:get(damage_type).projector(self, target.x, target.y, damage_type, dam, hit_type)
-		target:onHit(damage_type, dam)
+		DamageType:get(damage_type).projector(self, target.x, target.y, damage_type, calc_dam, hit_type)
+		target:onHit(damage_type, calc_dam)
 	end
 	
 
@@ -125,9 +125,7 @@ function _M:getDamageType()
 end
 
 function _M:getDamageModifier(weapon, target)
-	local damageModifier = 1
-	damage_modifier = damage_modifier + self:getSuperModifier(weapon, target)
-	damage_modifier = damage_modifier + self:getSubModifier(weapon, target)
+	local damage_modifier = 1
 	return damage_modifier
 end
 

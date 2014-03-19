@@ -29,7 +29,11 @@ return {
 	all_lited = true,
 	generator =  {
 		map = { class = "engine.generator.map.Static" },
-		-- actor = {},
+		actor = {
+			class = "engine.generator.actor.Random",
+--			guardian = "SHADE_OF_ANGMAR", -- The guardian is set in the static map
+			nb_npc = {5, 10},
+		},
 		-- object = {},
 	},
 	levels = {
