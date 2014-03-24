@@ -28,15 +28,19 @@ newBirthDescriptor{
 	copy = {
 		max_level = 10,
 		lite = 4,
-		max_life = 90,
-		life = 90,
+		max_life = 30,
+		life = 30,
 	},
 	combat = 
 	{
 		dam = 0.5, damtype = DamageType.PHYSICAL
 	},
 	
-	talents = {[ActorTalents.T_ATTACK] = 1,},
+	talents =
+	{
+		[ActorTalents.T_ATTACK] = 1,
+		[ActorTalents.T_FIRE] = 1,
+	},
 }
 
 newBirthDescriptor{
@@ -59,6 +63,7 @@ newBirthDescriptor{
 								{type="weapon", subtype="slashing", name="Cleaver"},
 								{type="weapon", subtype="slashing", name="Silver Cleaver"},
 								{type="weapon", subtype="stabbing", name="Wooden Stake"},
+								{type="ammunition", subtype="bullet", name=".45 ACP Rounds"},
 						   },
 	},	
 	combat =
@@ -70,7 +75,7 @@ newBirthDescriptor{
 
 newBirthDescriptor{
 	type = "role",
-	name = "Anthropologist",
+	name = "Anthropologist",	
 	desc =
 	{
 		"I read about this castle in a book once!",

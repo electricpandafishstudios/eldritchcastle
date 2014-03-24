@@ -66,13 +66,19 @@ newTalent{
 	sanity = 0,
 	range = 5,
 	action = function(self, t)
-		local tg = {type="hit", range=self:getTalentRange(t)}
+		local tg = {type="bolt", range=self:getTalentRange(t)}
 		local x, y, target = self:getTarget(tg)
+		local weapon = self:getWeaponFromSlot("HAND")
 		if not x or not y or not target then return nil end
-		if core.fov.distance(self.x, self.y, x, y) > 1 then return nil end
-
-		self:bumpInto(target)
-		return true
+		if not weapon then return nil end
+		
+		local inventory = self:getInven("INVEN")
+		local bullet = self:findInInventory(inventory, ".45 ACP Rounds")
+		if bullet then
+			self:useActionPoints(5)
+			self:playerUseItem(bullet, ".45 ACP Rounds", inventory)
+			self:project(tg, x, y, DamageType.PHYSICAL, weapon.combat.dam, nil)
+		end
 	end,
 	info = function(self, t)
 		return "Fire!"

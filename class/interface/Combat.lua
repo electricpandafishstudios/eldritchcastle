@@ -127,15 +127,15 @@ end
 function _M:getDamageModifier(weapon, target)
 	local damage_modifier = 1
 	if weapon then
-		damage_modifier = damage_modifier + self:getSuperModifier(weapon, target)
+		damage_modifier = 1 + self:getSuperModifier(weapon, target)
 		damage_modifier = damage_modifier + self:getSubModifier(weapon, target)
 	end
 	return damage_modifier
 end
 
 function _M:getSuperModifier(weapon, target)
-	if DamageType:get(target.combat.weakness).supertype ==  nil then return end
-	if DamageType:get(weapon.combat.damtype).supertype == nil then return end
+	if DamageType:get(target.combat.weakness).supertype ==  nil then return 0 end
+	if DamageType:get(weapon.combat.damtype).supertype == nil then return 0 end
 	if weapon.combat.dam then
 		damage = damage * self:getCon()
 		if DamageType:get(weapon.combat.damtype).supertype == DamageType:get(target.combat.weakness).supertype then
@@ -144,7 +144,9 @@ function _M:getSuperModifier(weapon, target)
 		if DamageType:get(weapon.combat.damtype).supertype == DamageType:get(target.combat.strength).supertype then
 			return 1 / 2
 		end
+		return 0
 	end
+	return 0
 end
 
 function _M:getSubModifier(weapon, target)
@@ -155,5 +157,7 @@ function _M:getSubModifier(weapon, target)
 		if DamageType:get(weapon.combat.damtype).subtype == DamageType:get(target.combat.strength).subtype then
 			return 1 / 1
 		end
+		return 0
 	end
+	return 0
 end

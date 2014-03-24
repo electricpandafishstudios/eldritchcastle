@@ -57,10 +57,14 @@ function _M:init(t, no_default)
 
 	t.lite = t.lite or 4
 	t.old_life = 0 
-
+	
 	mod.class.Actor.init(self, t, no_default)
 	engine.interface.PlayerHotkeys.init(self, t)
-	
+	self:onStatChange(STAT_CON, 1)
+	self:onStatChange(STAT_ALR, 1)
+	self:onStatChange(STAT_LCK, 1)
+	self:onStatChange(STAT_MEN, 1)
+	self.sanity = self.max_sanity
 	self.descriptor = {}
 end
 
