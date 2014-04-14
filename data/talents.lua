@@ -66,19 +66,18 @@ newTalent{
 	sanity = 0,
 	range = 5,
 	action = function(self, t)
+		-- Get param data to pass to bullet
 		local tg = {type="bolt", range=self:getTalentRange(t)}
 		local x, y, target = self:getTarget(tg)
-		local weapon = self:getWeaponFromSlot("HAND")
-		if not x or not y or not target then return nil end
-		if not weapon then return nil end
 		
+		-- Check to see if we have a weapon (gun) in hand
+		local weapon = self:getWeaponFromSlot("HAND")
+		if not x or not y or not target or not weapon then return nil end
+		
+		-- Check to see if we have any bullets
 		local inventory = self:getInven("INVEN")
-		local bullet = self:findInInventory(inventory, ".45 ACP Rounds")
-		if bullet then
-			self:useActionPoints(5)
-			self:playerUseItem(bullet, ".45 ACP Rounds", inventory)
-			self:project(tg, x, y, DamageType.PHYSICAL, weapon.combat.dam, nil)
-		end
+		local bullet = self:findInInventory(inventory, ".45 ACP Round")
+		self:removeObject(self:getInven("INVEN"), ".45 ACP Round")
 	end,
 	info = function(self, t)
 		return "Fire!"
@@ -115,7 +114,7 @@ newTalent{
 --	range = 10,
 --	action = function(self, t)
 --		local tg = {type="ball", range=self:getTalentRange(t), radius=1, talent=t}
---		local x, y = self:getTarget(tg)
+--	local x, y = self:getTarget(tg)
 --		if not x or not y then return nil end
 --		self:project(tg, x, y, DamageType.ACID, 1 + self:getMen(), {type="acid"})
 --		return true

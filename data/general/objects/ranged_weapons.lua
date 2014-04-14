@@ -27,23 +27,17 @@ newEntity{ base = "BASE_HANDGUN",
 	level_range = {1, 10},
 	range = 5,
 	require = { stat = { per= 4}, },
-	combat = { dam = 4, damtype = DamageType.PIERCING, },
-	multicharge = 6,
-	use_simple = {
-		name = "Fire",
-		use = function(self,who)
-			self:attackTarget(who, DamageType.PIERCING)
-		end
-		},
+	combat = { dam = 4, damtype = DamageType.BASHING, },
 }
 newEntity{ base = "BASE_BULLET",
-	name = ".45 ACP Rounds",
+	name = ".45 ACP Round",
 	level_range = {1, 10},
-	multicharge = 10,
+	power = 4,
+	stacking = false,
 	use_simple = {
-		name = "fire",
+		name = "capabitch",
 		use = function(self)
 			return {used = true, destroy = true}
 		end
 	},
-}
+}	
