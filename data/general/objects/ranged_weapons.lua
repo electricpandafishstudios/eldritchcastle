@@ -36,7 +36,7 @@ newEntity{ base = "BASE_BULLET",
 	stacking = false,
 	use_simple = {
 		name = "use",
-		use = function(self)
+		use = function(self, who)
 			return {used = true, destroy = true}
 		end
 	},

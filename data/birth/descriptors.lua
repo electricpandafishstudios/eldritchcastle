@@ -63,8 +63,8 @@ newBirthDescriptor{
 								{type="weapon", subtype="slashing", name="Cleaver"},
 								{type="weapon", subtype="slashing", name="Silver Cleaver"},
 								{type="weapon", subtype="stabbing", name="Wooden Stake"},
-								-- {type="ammunition", subtype="bullet", name=".45 ACP Round"},
-								-- {type="ammunition", subtype="bullet", name=".45 ACP Round"},
+								{type="ammunition", subtype="bullet", name=".45 ACP Round"},
+								{type="ammunition", subtype="bullet", name=".45 ACP Round"},
 						   },
 	},	
 	combat =
