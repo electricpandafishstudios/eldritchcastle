@@ -19,12 +19,12 @@
 -- darkgod@te4.org
 
 
-name = "Eldritch Castle"
-long_name = "The Eldritch Castle"
-short_name = "eldritch_castle"
+name = "The Valley of Nis"
+long_name = "The Valley of Nis"
+short_name = "Nis"
 author = { "ElectricPandaFish", "elp@na.org" }
 homepage = "http://te4.org/"
-version = {0,3,1}
+version = {0,0,1}
 engine = {1,1,5,"te4"}
 description = [[
 add a desciprion here later.
