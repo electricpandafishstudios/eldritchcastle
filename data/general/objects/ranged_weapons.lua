@@ -26,7 +26,7 @@ newEntity{ base = "BASE_HANDGUN",
 	name = "Colt .45",
 	level_range = {1, 10},
 	range = 5,
-	require = { stat = { per= 4}, },
+	require = { stat = { alr= 4}, },
 	combat = { dam = 4, damtype = DamageType.BASHING, },
 }
 newEntity{ base = "BASE_BULLET",
@@ -35,7 +35,7 @@ newEntity{ base = "BASE_BULLET",
 	power = 4,
 	stacking = false,
 	use_simple = {
-		name = "capabitch",
+		name = "use",
 		use = function(self)
 			return {used = true, destroy = true}
 		end

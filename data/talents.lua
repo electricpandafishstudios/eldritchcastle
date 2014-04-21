@@ -67,17 +67,17 @@ newTalent{
 	range = 5,
 	action = function(self, t)
 		-- Get param data to pass to bullet
-		local tg = {type="bolt", range=self:getTalentRange(t)}
-		local x, y, target = self:getTarget(tg)
+		-- local tg = {type="bolt", range=self:getTalentRange(t)}
+		-- local x, y, target = self:getTarget(tg)
 		
 		-- Check to see if we have a weapon (gun) in hand
-		local weapon = self:getWeaponFromSlot("HAND")
-		if not x or not y or not target or not weapon then return nil end
+		-- local weapon = self:getWeaponFromSlot("HAND")
+		-- if not x or not y or not target or not weapon then return nil end
 		
 		-- Check to see if we have any bullets
-		local inventory = self:getInven("INVEN")
-		local bullet = self:findInInventory(inventory, ".45 ACP Round")
-		self:removeObject(self:getInven("INVEN"), ".45 ACP Round")
+		-- local inventory = self:getInven("INVEN")
+		-- local bullet = self:findInInventory(inventory, ".45 ACP Round")
+		-- self:removeObject(self:getInven("INVEN"), ".45 ACP Round")
 	end,
 	info = function(self, t)
 		return "Fire!"
