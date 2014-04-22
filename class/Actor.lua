@@ -93,9 +93,6 @@ function _M:init(t, no_default)
 	t.max_actions = t.max_actions or  self.max_action_points or 5
 	
 	-- Default regen
-	
-	-- t.sanity_regen = t.sanity_regen or 0
-	
 	t.life_regen = t.life_regen or 1 -- Life regen real slow
 	t.actions_regen = t.actons_regen or 100
 	t.life_regen_pool = t.life_regen_pool or 0
@@ -258,7 +255,6 @@ function _M:onStatChange(stat, v)
 		self.ego_chance = self:getLck()
 	end
 	if stat == self.STAT_MEN then
-		-- self.max_sanity = 90 + 10 * self:getMen()
 		self.combat.damage = math.max(1, self:getCon() - 5 + math.floor((self:getCon() - 5) / 2))
 	end
 end

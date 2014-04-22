@@ -110,7 +110,7 @@ function _M:newGame()
 
 	self.creating_player = true
 	local birth = Birther.new(nil, self.player, {"base", "role" }, function()
-		self:changeLevel(1, "castle_static")
+		self:changeLevel(1, "Outer_Ruins")
 		print("[PLAYER BIRTH] resolve...")
 		self.player:resolve()
 		self.player:resolve(nil, true)
