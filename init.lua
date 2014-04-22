@@ -22,7 +22,7 @@
 name = "The Valley of Nis"
 long_name = "The Valley of Nis"
 short_name = "Nis"
-author = { "ElectricPandaFish", "elp@na.org" }
+author = { "ElectricPandaFish", "electricpandafish@googlegroups.com" }
 homepage = "http://te4.org/"
 version = {0,0,1}
 engine = {1,1,5,"te4"}

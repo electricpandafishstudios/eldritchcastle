@@ -64,7 +64,9 @@ function _M:init(t, no_default)
 	self:onStatChange(STAT_ALR, 1)
 	self:onStatChange(STAT_LCK, 1)
 	self:onStatChange(STAT_MEN, 1)
-	self.sanity = self.max_sanity
+	
+	-- self.sanity = self.max_sanity
+	
 	self.descriptor = {}
 end
 
