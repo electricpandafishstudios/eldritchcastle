@@ -81,7 +81,7 @@ function _M:run()
 	self.logPlayer = function(e, style, ...) if e == self.player then self.log(style, ...) end end
 	self.player_display = PlayerDisplay.new(0, 0, 200, self.h, {30,30,0}, "/data/font/VeraMono.ttf", 12)
 	
-	self.log(self.flash.GOOD, "Welcome to #00FF00#the Eldritch Castle!")
+	self.log(self.flash.GOOD, "Welcome to #00FF00#The Valley of Nis.")
 	self.player_display:toScreen(nb_keyframe)
 
 	-- Setup inputs
