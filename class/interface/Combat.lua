@@ -82,17 +82,6 @@ function _M:attackTargetWith(target, damage_type, weapon_damage, damage_modifier
 		DamageType:get(damage_type).projector(self, target.x, target.y, damage_type, calc_dam, hit_type)
 		target:onHit(damage_type, calc_dam)
 	end
-	
-
-	--if (super_modifier > 0) and (sub_modifier > 0) then
-	--	local hit_type = "super crit"
-	--elseif (super_modifier > 0) or (sub_modifier > 0) then
-	--	local hit_type = "crit"
-	--elseif not (super_modifier < 0) or (sub_modifier < 0) then
-	--	local hit_type = "normal"
-	--else
-	--	local hit_type = "weak"
-	--end
 end
 
 function _M:deflectAttack(damage_type, weapon_damage)
