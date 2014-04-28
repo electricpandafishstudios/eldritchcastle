@@ -31,28 +31,33 @@ return {
 	max_material_level = function() return game.state:isAdvanced() and 4 or 2 end,
 	generator =  {
 		map = {
-			class = "engine.generator.map.Foresty",
+			class = "engine.generator.map.Forest",
 			edge_entrances = {4,6},
 			zoom = 10,
 			sqrt_percent = 100,
 			noise = "fbm_perlin",
+			-- floor2 = function() if rng.chance(20) then return "BOGWATER_MISC" else return "BOGWATER" end end,
 			floor = function() if rng.chance(20) then return "GRASS" else return "DIRT" end end,
+			
+			
 			-- wall = "TREE",
-			wall = "WALL",
 			-- up = "GRASS_UP4",
-			up = "UP",
 			-- down = "GRASS_DOWN6",
-			down = "DOWN",
 			-- door = "GRASS",
+			-- road = "GRASS_ROAD_DIRT",			
+			
+			wall = "BRAMBLE",
+			up = "UP",
+			down = "DOWN",
 			door = "DOOR",
-			-- road = "GRASS_ROAD_DIRT",
 			road = "COBBLESTONE",
 			add_road = true,
+			
 			do_ponds = {
-				nb = {0, 2},
+				nb = {1, 3},
 				size = {w=25, h=25},
 				-- pond = {{0.6, "DEEP_WATER"}, {0.8, "DEEP_WATER"}},
-				pond = {{0.6, "WINDOW"}, {0.8, "WINDOW"}},
+				pond = {{0.6, "BOGWATER"}, {0.8, "BOGWATER"}},
 			},
 			
 			-- Re-enable after rooms are actually coded.

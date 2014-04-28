@@ -19,9 +19,9 @@
 -- darkgod@te4.org
 
 
-name = "The Valley of Nis"
+name = "Nis"
 long_name = "The Valley of Nis"
-short_name = "Nis"
+short_name = "nis"
 author = { "ElectricPandaFish", "electricpandafish@googlegroups.com" }
 homepage = "http://te4.org/"
 version = {0,0,1}
