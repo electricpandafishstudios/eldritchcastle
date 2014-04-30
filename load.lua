@@ -63,14 +63,14 @@ ActorInventory:defineInventory("ITEM", "Special item", true, "The special item t
 
 -- Actor leveling
 ActorLevel:defineMaxLevel(15)
--- ActorLevel.exp_chart = function(level)
-	-- local exp = 100
-	-- for i = 2, level do
-		-- exp = exp + 100( 2 * (level - 1))
-	-- end
-	-- return math.ceil(exp)
--- end
--- Actor AIs
+ActorLevel.exp_chart = function(level)
+	local exp = 0
+	local mult = 1000
+	for i = 2, level do
+		exp = exp + (mult * (i - 1))
+	end
+	return math.ceil(exp)
+end-- Actor AIs
 ActorAI:loadDefinition("/engine/ai/")
 
 -- Birther descriptor
