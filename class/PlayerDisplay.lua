@@ -107,7 +107,6 @@ function _M:display()
 	self:makeTextureBar("AP", nil, player.actions, player.max_actions, nil, x, h, 255, 255, 255, colors.YELLOW_GREEN, colors.OLIVE_DRAB) h = h + self.font_h
     self:makeTextureBar("Decay", nil, player.level - 1, player.max_level - 1, nil, x, h, 255, 255, 255, colors.YELLOW_GREEN, colors.OLIVE_DRAB) h = h + self.font_h
 	self:makeTextureBar("XP", nil, player.exp, player:getExpChart(player.level + 1), nil, x, h, 255, 255, 255, colors.BLUE, colors.BLACK) h = h + self.font_h
-	-- self:makeTextureBar("XP", ("(%d) %d/%d"):format(player.level, player.exp, player:getExpChart(1)), )
 	if savefile_pipe.saving then
         h = h + self.font_h
         self:makeTextureBar("Saving:", "%d%%", 100 * savefile_pipe.current_nb / savefile_pipe.total_nb, 100, nil, x, h, colors.YELLOW.r, colors.YELLOW.g, colors.YELLOW.b, 
