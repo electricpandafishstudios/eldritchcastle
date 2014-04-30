@@ -30,7 +30,7 @@ newEntity{
 newEntity{
 	define_as = "BOGWATER",
 	name = "bog water", image = "terrain/granite_wall1.png",
-	display = '~', color_r=50, color_g=57, color_b=12, back_color=colors.DARK_SLATE_GRAY,
+	display = '~', color_r=50, color_g=57, color_b=12, back_color=colors.BLACK,
 	always_remember = true,
 	does_block_move = false,
 	can_pass = {pass_wall=1},

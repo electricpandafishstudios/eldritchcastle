@@ -105,7 +105,9 @@ function _M:display()
 
     self:makeTextureBar("#c00000#Life:", nil, player.life, player.max_life, player.life_regen * util.bound((player.healing_factor or 1), 0, 2.5), x, h, 255, 255, 255, colors.DARK_RED, colors.VERY_DARK_RED) h = h + self.font_h
 	self:makeTextureBar("AP", nil, player.actions, player.max_actions, nil, x, h, 255, 255, 255, colors.YELLOW_GREEN, colors.OLIVE_DRAB) h = h + self.font_h
-    if savefile_pipe.saving then
+    self:makeTextureBar("XP", nil, player.exp, player:getExpChart(player.level + 1), player.level, x, h, 255, 255, 255, colors.BLUE, colors.BLACK) h = h + self.font_h
+	-- self:makeTextureBar("XP", ("(%d) %d/%d"):format(player.level, player.exp, player:getExpChart(1)), )
+	if savefile_pipe.saving then
         h = h + self.font_h
         self:makeTextureBar("Saving:", "%d%%", 100 * savefile_pipe.current_nb / savefile_pipe.total_nb, 100, nil, x, h, colors.YELLOW.r, colors.YELLOW.g, colors.YELLOW.b, 
         {r=49, g=54,b=42},{r=17, g=19, b=0})
