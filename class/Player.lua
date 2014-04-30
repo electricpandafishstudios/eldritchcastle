@@ -49,7 +49,7 @@ function _M:init(t, no_default)
 	t.color_r=t.color_r or 230
 	t.color_g=t.color_g or 230
 	t.color_b=t.color_b or 230
-
+	
 	t.player = true
 	t.type = t.type or "humanoid"
 	t.subtype = t.subtype or "player"
