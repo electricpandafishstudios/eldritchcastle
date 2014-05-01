@@ -93,7 +93,6 @@ function _M:init(t, no_default)
 	t.max_actions = t.max_actions or  self.max_action_points or 5
 	
 	-- Default regen
-	t.sanity_regen = t.sanity_regen or 0
 	t.life_regen = t.life_regen or 1 -- Life regen real slow
 	t.actions_regen = t.actons_regen or 100
 	t.life_regen_pool = t.life_regen_pool or 0
@@ -256,7 +255,6 @@ function _M:onStatChange(stat, v)
 		self.ego_chance = self:getLck()
 	end
 	if stat == self.STAT_MEN then
-		self.max_sanity = 90 + 10 * self:getMen()
 		self.combat.damage = math.max(1, self:getCon() - 5 + math.floor((self:getCon() - 5) / 2))
 	end
 end
@@ -277,10 +275,10 @@ function _M:preUseTalent(ab, silent)
 	if not self:enoughEnergy() then return false end
 
 	if ab.mode == "sustained" then
-		if ab.sustain_sanity and self.max_sanity < ab.sustain_sanity and not self:isTalentActive(ab.id) then
+		-- if ab.sustain_sanity and self.max_sanity < ab.sustain_sanity and not self:isTalentActive(ab.id) then
 			game.logPlayer(self, "You do not have enough sanity to activate %s.", ab.name)
 			return false
-		end
+		-- end
 	else
 		if ab.action_points and self:getActions() < ab.action_points then
 			if not silent then 
@@ -320,13 +318,13 @@ function _M:postUseTalent(ab, ret)
 
 	if ab.mode == "sustained" then
 		if not self:isTalentActive(ab.id) then
-			if ab.sustain_sanity then
-				self.max_sanity = self.max_sanity - ab.sustain_sanity
-			end
+			-- if ab.sustain_sanity then
+				-- self.max_sanity = self.max_sanity - ab.sustain_sanity
+			-- end
 		else
-			if ab.sustain_sanity then
-				self.max_sanity = self.max_sanity + ab.sustain_sanity
-			end
+			-- if ab.sustain_sanity then
+				-- self.max_sanity = self.max_sanity + ab.sustain_sanity
+			-- end
 		end
 	else
 		if ab.action_points then

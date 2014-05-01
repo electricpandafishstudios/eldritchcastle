@@ -44,7 +44,9 @@ ActorTalents:loadDefinition("/data/talents.lua")
 ActorTemporaryEffects:loadDefinition("/data/timed_effects.lua")
 
 -- Actor resources
-ActorResource:defineResource("Sanity", "sanity", nil, "sanity_regen", "Sanity represents your character's mental state.")
+
+-- ActorResource:defineResource("Sanity", "sanity", nil, "sanity_regen", "Sanity represents your character's mental state.")
+
 ActorResource:defineResource("Action Points", "actions", nil, "actions_regen", "AP represent the actions that can be taken each turn.")
 
 -- Actor stats
@@ -59,7 +61,16 @@ ActorInventory:defineInventory("HAND", "Weapon used", true, "The weapon the char
 ActorInventory:defineInventory("BODY", "Item worn", true, "The item the character is currently wearing.")
 ActorInventory:defineInventory("ITEM", "Special item", true, "The special item the character is holding.")
 
--- Actor AIs
+-- Actor leveling
+ActorLevel:defineMaxLevel(15)
+ActorLevel.exp_chart = function(level)
+	local exp = 0
+	local mult = 1000
+	for i = 2, level do
+		exp = exp + (mult * (i - 1))
+	end
+	return math.ceil(exp)
+end-- Actor AIs
 ActorAI:loadDefinition("/engine/ai/")
 
 -- Birther descriptor

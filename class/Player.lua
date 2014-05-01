@@ -49,7 +49,7 @@ function _M:init(t, no_default)
 	t.color_r=t.color_r or 230
 	t.color_g=t.color_g or 230
 	t.color_b=t.color_b or 230
-
+	
 	t.player = true
 	t.type = t.type or "humanoid"
 	t.subtype = t.subtype or "player"
@@ -64,7 +64,7 @@ function _M:init(t, no_default)
 	self:onStatChange(STAT_ALR, 1)
 	self:onStatChange(STAT_LCK, 1)
 	self:onStatChange(STAT_MEN, 1)
-	self.sanity = self.max_sanity
+	
 	self.descriptor = {}
 end
 
