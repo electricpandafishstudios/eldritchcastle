@@ -9,3 +9,11 @@ ToDo:
 3. Leveling / Class Design
 4. Item / Combat Design
 5. UI Design
+
+Zones:
+Valley Entrance (Forest)
+Outer Ruins (Town)
+Crumbling Courtyards (Tileset / City)
+Treasure Vaults (Caverns)
+Valley of Fallen Stone
+River Than (Static?)
